@@ -29,7 +29,17 @@ type hnStory struct {
 	Hours    int
 }
 
-type results struct {
+type lrsStory struct {
+	ID       string `json:"short_id"`
+	TimeS    string `json:"created_at"`
+	Title    string `json:"title"`
+	Url      string `json:"url"`
+	Score    int    `json:"score"`
+	Comments int    `json:"comment_count"`
+	LrsUrl   string `json:"comments_url"`
+}
+
+type hnResults struct {
 	mainStories    []hnStory
 	blockedStories []hnStory
 	lowStories     []hnStory
@@ -39,35 +49,26 @@ type results struct {
 }
 
 func main() {
-	var r results
+	var hn hnResults
 
-	blockedDomains := readBlockedDomains()
-	blockedKeywords := readBlockedKeywords()
+	homeDir, err := os.UserHomeDir()
+	errExit(err, "error: cannot get home dir")
+	progDir := homeDir + "/.config/newsfilter/"
 
 	client := &http.Client{}
 	now := time.Now()
 
-	getStoryIDs(client, &r)
-	readProcessedIDs(&r)
+	getHnStoryIDs(client, &hn)
+	readHnProcessedIDs(&hn, progDir)
+	filterHn(&hn, client, now)
 
-	count := 0
-	for _, id := range r.storyIDs {
+	lrsStories := getLrsStories(client)
+	lrsProcessedIDs := readLrsProcessedIDs(progDir)
+	lrsStories = filterLrs(lrsStories, &lrsProcessedIDs)
 
-		if intExists(r.processedIDs, id) {
-			continue
-		}
-
-		story := getStory(id, client, now)
-		classifyStory(story, blockedDomains, blockedKeywords, &r)
-
-		count++
-		if count > 20 {
-			break
-		}
-	}
-
-	logStories(&r)
-	prepareHtml(&r)
+	logHnStories(&hn, progDir)
+	logLrsStories(lrsStories, progDir)
+	prepareHtml(&hn, &lrsStories, progDir, now)
 
 	fmt.Printf("all: %d\n"+
 		"processed: %d\n"+
@@ -75,12 +76,14 @@ func main() {
 		"low: %d\n"+
 		"very low: %d\n"+
 		"main: %d\n",
-		len(r.storyIDs),
-		len(r.processedIDs),
-		len(r.blockedStories),
-		len(r.lowStories),
-		len(r.vLowStories),
-		len(r.mainStories))
+		len(hn.storyIDs),
+		len(hn.processedIDs),
+		len(hn.blockedStories),
+		len(hn.lowStories),
+		len(hn.vLowStories),
+		len(hn.mainStories))
+
+	fmt.Println(len(lrsStories), len(lrsProcessedIDs))
 }
 
 func readBlockedDomains() []string {
@@ -115,8 +118,8 @@ func readBlockedKeywords() []string {
 	return blockedKeywords
 }
 
-func readProcessedIDs(r *results) {
-	fd, err := os.Open("/home/x/.config/newsfilter/processed_ids")
+func readHnProcessedIDs(hn *hnResults, progDir string) {
+	fd, err := os.Open(progDir + "hn_processed_ids")
 	defer fd.Close()
 	if err != nil {
 		return
@@ -126,9 +129,27 @@ func readProcessedIDs(r *results) {
 	for input.Scan() {
 		id, err := strconv.Atoi(input.Text())
 		errExit(err, "error: cannot read processed ID")
-		r.processedIDs = append(r.processedIDs, id)
+		hn.processedIDs = append(hn.processedIDs, id)
 	}
-	sort.Ints(r.processedIDs)
+	sort.Ints(hn.processedIDs)
+}
+
+func readLrsProcessedIDs(progDir string) []string {
+	var processedIDs []string
+
+	fd, err := os.Open(progDir + "lrs_processed_ids")
+	defer fd.Close()
+	if err != nil {
+		return processedIDs
+	}
+
+	input := bufio.NewScanner(fd)
+	for input.Scan() {
+		processedIDs = append(processedIDs, input.Text())
+	}
+	sort.Strings(processedIDs)
+
+	return processedIDs
 }
 
 func strExists(s []string, el string) bool {
@@ -159,7 +180,7 @@ func keywordFound(keywords []string, title string) bool {
 	return false
 }
 
-func getStoryIDs(client *http.Client, r *results) {
+func getHnStoryIDs(client *http.Client, hn *hnResults) {
 	var topIDs, bestIDs []int
 	urlTop := "https://hacker-news.firebaseio.com/v0/topstories.json"
 	urlBest := "https://hacker-news.firebaseio.com/v0/beststories.json"
@@ -182,9 +203,36 @@ func getStoryIDs(client *http.Client, r *results) {
 	err = json.Unmarshal(body, &bestIDs)
 	errExit(err, "error: cannot parse json")
 
-	r.storyIDs = append(topIDs, bestIDs...)
-	sort.Ints(r.storyIDs)
-	r.storyIDs = uniqueInts(r.storyIDs)
+	hn.storyIDs = append(topIDs, bestIDs...)
+	sort.Ints(hn.storyIDs)
+	hn.storyIDs = uniqueInts(hn.storyIDs)
+}
+
+func getLrsStories(client *http.Client) []lrsStory {
+
+	var storiesHot, storiesNew []lrsStory
+	urlHot := "https://lobste.rs/hottest.json"
+	urlNew := "https://lobste.rs/newest.json"
+
+	req, err := http.NewRequest("GET", urlHot, nil)
+	errExit(err, "error: cannot prepare a request")
+	resp, err := client.Do(req)
+	errExit(err, "error: cannot make a request")
+
+	body, err := ioutil.ReadAll(resp.Body)
+	err = json.Unmarshal(body, &storiesHot)
+	errExit(err, "error: cannot parse json")
+
+	req, err = http.NewRequest("GET", urlNew, nil)
+	errExit(err, "error: cannot prepare a request")
+	resp, err = client.Do(req)
+	errExit(err, "error: cannot make a request")
+
+	body, err = ioutil.ReadAll(resp.Body)
+	err = json.Unmarshal(body, &storiesNew)
+	errExit(err, "error: cannot parse json")
+
+	return append(storiesHot, storiesNew...)
 }
 
 func uniqueInts(ints []int) []int {
@@ -230,51 +278,85 @@ func getStory(id int, client *http.Client, now time.Time) hnStory {
 	return story
 }
 
-func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
-	r *results) {
+func filterHn(hn *hnResults, client *http.Client, now time.Time) {
+	count := 0
 
-	switch {
-	case story.Type != "story":
-		r.blockedStories = append(r.blockedStories, story)
+	blockedDomains := readBlockedDomains()
+	blockedKeywords := readBlockedKeywords()
 
-	case strExists(blockedDomains, story.Domain):
-		r.blockedStories = append(r.blockedStories, story)
+	for _, id := range hn.storyIDs {
 
-	case keywordFound(blockedKeywords, story.Title):
-		r.blockedStories = append(r.blockedStories, story)
+		if intExists(hn.processedIDs, id) {
+			continue
+		}
 
-	case story.Hours > 72 && story.Score >= 100:
-		r.mainStories = append(r.mainStories, story)
+		story := getStory(id, client, now)
+		classifyStory(story, blockedDomains, blockedKeywords, hn)
 
-	case story.Hours > 72 && story.Score < 100:
-		r.vLowStories = append(r.vLowStories, story)
-
-	case story.Hours > 36 && story.Score < 50:
-		r.vLowStories = append(r.vLowStories, story)
-
-	case story.Hours > 24 && story.Score < 20:
-		r.vLowStories = append(r.vLowStories, story)
-
-	case story.Hours > 12 && story.Score < 10:
-		r.vLowStories = append(r.vLowStories, story)
-
-	case story.Score < 100 && story.ScoreAvg < 20:
-		r.lowStories = append(r.lowStories, story)
-
-	default:
-		r.mainStories = append(r.mainStories, story)
+		count++
+		if count > 50000 {
+			break
+		}
 	}
 }
 
-func logStories(r *results) {
-	homeDir, err := os.UserHomeDir()
-	errExit(err, "error: cannot get home dir")
-	progDir := homeDir + "/.config/newsfilter/"
-	_ = progDir
+func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
+	hn *hnResults) {
 
-	storiesToFile(progDir, "hn_main.tsv", r.mainStories)
-	storiesToFile(progDir, "hn_blocked.tsv", r.blockedStories)
-	storiesToFile(progDir, "hn_vlow.tsv", r.vLowStories)
+	switch {
+	case story.Type != "story":
+		hn.blockedStories = append(hn.blockedStories, story)
+
+	case strExists(blockedDomains, story.Domain):
+		hn.blockedStories = append(hn.blockedStories, story)
+
+	case keywordFound(blockedKeywords, story.Title):
+		hn.blockedStories = append(hn.blockedStories, story)
+
+	case story.Hours > 72 && story.Score >= 100:
+		hn.mainStories = append(hn.mainStories, story)
+
+	case story.Hours > 72 && story.Score < 100:
+		hn.vLowStories = append(hn.vLowStories, story)
+
+	case story.Hours > 36 && story.Score < 50:
+		hn.vLowStories = append(hn.vLowStories, story)
+
+	case story.Hours > 24 && story.Score < 20:
+		hn.vLowStories = append(hn.vLowStories, story)
+
+	case story.Hours > 12 && story.Score < 10:
+		hn.vLowStories = append(hn.vLowStories, story)
+
+	case story.Score < 100 && story.ScoreAvg < 20:
+		hn.lowStories = append(hn.lowStories, story)
+
+	default:
+		hn.mainStories = append(hn.mainStories, story)
+	}
+}
+
+func filterLrs(lrsStories []lrsStory, lrsProcessedIDs *[]string) []lrsStory {
+	var result []lrsStory
+
+	for _, story := range lrsStories {
+		if strExists(*lrsProcessedIDs, story.ID) {
+			continue
+		}
+		if story.Score > 10 || story.Comments > 5 {
+			result = append(result, story)
+			*lrsProcessedIDs = append(*lrsProcessedIDs, story.ID)
+			// expensive; fix if processing slows down
+			sort.Strings(*lrsProcessedIDs)
+		}
+	}
+	return result
+}
+
+func logHnStories(hn *hnResults, progDir string) {
+	storiesToFile(progDir, "hn_main.tsv", hn.mainStories)
+	storiesToFile(progDir, "hn_blocked.tsv", hn.blockedStories)
+	storiesToFile(progDir, "hn_vlow.tsv", hn.vLowStories)
 }
 
 func storiesToFile(progDir, file string, stories []hnStory) {
@@ -284,50 +366,95 @@ func storiesToFile(progDir, file string, stories []hnStory) {
 	errExit(err, "error: cannot create file")
 	defer fd.Close()
 
-	fdIDs, err := os.OpenFile(progDir+"processed_ids", fdOpts, 0644)
+	fdIDs, err := os.OpenFile(progDir+"hn_processed_ids", fdOpts, 0644)
 	errExit(err, "error: cannot create file")
 	defer fdIDs.Close()
 
 	for _, story := range stories {
-		fmt.Fprintln(fd, logLine(story))
+		fmt.Fprintln(fd, logHnLine(story))
 		fmt.Fprintln(fdIDs, story.ID)
 	}
 }
 
-func logLine(story hnStory) string {
+func logLrsStories(lrsStories []lrsStory, progDir string) {
+	fdOpts := os.O_CREATE | os.O_APPEND | os.O_WRONLY
+
+	fd, err := os.OpenFile(progDir+"lrs_main.tsv", fdOpts, 0644)
+	errExit(err, "error: cannot create file")
+	defer fd.Close()
+
+	fdIDs, err := os.OpenFile(progDir+"lrs_processed_ids", fdOpts, 0644)
+	errExit(err, "error: cannot create file")
+	defer fdIDs.Close()
+
+	for _, story := range lrsStories {
+		fmt.Fprintln(fd, logLrsLine(story))
+		fmt.Fprintln(fdIDs, story.ID)
+	}
+}
+
+func logHnLine(story hnStory) string {
 	return fmt.Sprintf("%s\t"+
+		"%d\t"+
+		"%d\t"+
+		"%d\t"+
 		"%d\t"+
 		"%s\t"+
 		"%s\t"+
 		"%s",
 		story.Time.Format("2006-01-02"),
 		story.ID,
+		story.Hours,
+		story.Score,
+		story.ScoreAvg,
 		story.By,
 		story.Title,
 		story.Url,
 	)
 }
 
-func prepareHtml(r *results) {
-	homeDir, err := os.UserHomeDir()
-	errExit(err, "error: cannot get home dir")
-	progDir := homeDir + "/.config/newsfilter/"
+func logLrsLine(story lrsStory) string {
+	return fmt.Sprintf("%s\t"+
+		"%s\t"+
+		"%s\t"+
+		"%s",
+		story.TimeS,
+		story.ID,
+		story.Title,
+		story.Url,
+	)
+}
 
-	file := "news_xxx.html"
+func prepareHtml(hn *hnResults, lrsStories *[]lrsStory, progDir string,
+	now time.Time) {
+
+	dt := fmt.Sprintf("%d-%.2d-%.2d_%.2d%.2d",
+		now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
+	file := "news_"+dt+".html"
+	hnItemUrl := "https://news.ycombinator.com/item?id="
+
 	fdOpts := os.O_CREATE | os.O_TRUNC | os.O_WRONLY
 	fd, err := os.OpenFile(progDir+file, fdOpts, 0644)
 	errExit(err, "error: cannot create file")
 	defer fd.Close()
 
 	fmt.Fprintln(fd, htmlHeader)
-	for _, story := range r.mainStories {
+
+	for _, story := range hn.mainStories {
 		fmt.Fprintf(fd, "%s\n", story.Title)
 		fmt.Fprintf(fd, "<a href='%s'>link</a>", story.Url)
-		fmt.Fprintf(fd, " <a href='%s'>hn</a>",
-			"https://news.ycombinator.com/item?id="+
-				strconv.Itoa(story.ID))
+		hnUrl := hnItemUrl + strconv.Itoa(story.ID)
+		fmt.Fprintf(fd, " <a href='%s'>hn</a>", hnUrl)
 		fmt.Fprintln(fd, "\n")
 	}
+
+	for _, story := range *lrsStories {
+		fmt.Fprintf(fd, "%s\n", story.Title)
+		fmt.Fprintf(fd, "<a href='%s'>link</a>", story.Url)
+		fmt.Fprintf(fd, " <a href='%s'>lrs</a>", story.LrsUrl)
+		fmt.Fprintln(fd, "\n")
+	}
+
 	fmt.Fprintln(fd, htmlFooter)
 }
 
