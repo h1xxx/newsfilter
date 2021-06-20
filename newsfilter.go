@@ -430,7 +430,7 @@ func prepareHtml(hn *hnResults, lrsStories *[]lrsStory, progDir string,
 
 	dt := fmt.Sprintf("%d-%.2d-%.2d_%.2d%.2d",
 		now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
-	file := "news_"+dt+".html"
+	file := "news_" + dt + ".html"
 	hnItemUrl := "https://news.ycombinator.com/item?id="
 
 	fdOpts := os.O_CREATE | os.O_TRUNC | os.O_WRONLY
@@ -468,23 +468,23 @@ func errExit(err error, msg string) {
 var htmlHeader string = `<!DOCTYPE html>
 <html>
 <head>
-        <title>news</title>
-        <meta charset="UTF-8">
+	<title>news</title>
+	<meta charset="UTF-8">
 </head>
 
 <style>
-        html, pre {     max-width: 750px;
-                        margin: 0 auto;
-                        line-height: 1.2;
-                        color: #bbb;
-                        background-color: #000;
-                        -webkit-font-smoothing: none;
-                        -webkit-text-stroke: 0.3px;
-        }
-        a {             color: #009900;
-                        background-color: transparent;
-                        text-decoration: underline;
-        }
+	html, pre {	max-width: 750px;
+			margin: 0 auto;
+			line-height: 1.2;
+			color: #bbb;
+			background-color: #000;
+			-webkit-font-smoothing: none;
+			-webkit-text-stroke: 0.3px;
+	}
+	a {		color: #009900;
+			background-color: transparent;
+			text-decoration: underline;
+	}
 </style>
 
 <body><pre>
