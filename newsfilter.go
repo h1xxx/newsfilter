@@ -64,27 +64,36 @@ func main() {
 	client := &http.Client{}
 	now := time.Now()
 
+	fmt.Println("getting HN stories...")
 	getHnStoryIDs(client, &hn)
+	fmt.Println("getting already processed HN IDs...")
 	readHnProcessedIDs(&hn, progDir)
+	fmt.Println("filtering HN stories...")
 	filterHn(&hn, client, now)
 
+	fmt.Println("getting lobste.rs stories...")
 	lrsStories := getLrsStories(client)
+	fmt.Println("getting already processed lobste.rs IDs...")
 	lrsProcessedIDs := readLrsProcessedIDs(progDir)
+	fmt.Println("filtering lobste.rs stories...")
 	lrsStories = filterLrs(lrsStories, &lrsProcessedIDs)
 
+	fmt.Println("logging all stories...")
 	logHnStories(&hn, progDir)
 	logLrsStories(lrsStories, progDir)
 
+	fmt.Println("reading history of HN URLs...")
 	readHnUrls(&hn, progDir)
-	fmt.Println(len(hn.urls))
+	fmt.Println("preparing final html file...")
 	prepareHtml(&hn, &lrsStories, progDir, now)
 
-	fmt.Printf("all: %d\n"+
-		"processed: %d\n"+
-		"blocked: %d\n"+
-		"low: %d\n"+
-		"very low: %d\n"+
-		"main: %d\n",
+	fmt.Println("\nHN stats:")
+	fmt.Printf("fetched stories: %d\n"+
+		"processed stories: %d\n"+
+		"blocked stories: %d\n"+
+		"low score stories: %d\n"+
+		"very low score stories: %d\n"+
+		"main stories: %d\n",
 		len(hn.storyIDs),
 		len(hn.processedIDs),
 		len(hn.blockedStories),
@@ -92,7 +101,15 @@ func main() {
 		len(hn.vLowStories),
 		len(hn.mainStories))
 
-	fmt.Println(len(lrsStories), len(lrsProcessedIDs))
+	fmt.Println("\nlobste.rs stats:")
+	fmt.Printf("processed stories: %d\n"+
+		"main stories: %d\n\n",
+		len(lrsProcessedIDs),
+		len(lrsStories))
+	dt := fmt.Sprintf("%d-%.2d-%.2d_%.2d%.2d",
+	now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
+	outFile := "news_" + dt + ".html"
+	fmt.Println(progDir + outFile)
 }
 
 func readBlockedDomains() []string {
