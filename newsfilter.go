@@ -46,6 +46,12 @@ type hnResults struct {
 	vLowStories    []hnStory
 	storyIDs       []int
 	processedIDs   []int
+	urls           []url
+}
+
+type url struct {
+	url string
+	id  int
 }
 
 func main() {
@@ -68,6 +74,9 @@ func main() {
 
 	logHnStories(&hn, progDir)
 	logLrsStories(lrsStories, progDir)
+
+	readHnUrls(&hn, progDir)
+	fmt.Println(len(hn.urls))
 	prepareHtml(&hn, &lrsStories, progDir, now)
 
 	fmt.Printf("all: %d\n"+
@@ -134,6 +143,33 @@ func readHnProcessedIDs(hn *hnResults, progDir string) {
 	sort.Ints(hn.processedIDs)
 }
 
+func readHnUrls(hn *hnResults, progDir string) {
+	files := []string{"hn_main.tsv", "hn_vlow.tsv",
+		"hn_blocked.tsv", "hn_low.tsv.tmp"}
+
+	for _, f := range files {
+		fd, err := os.Open(progDir + f)
+		defer fd.Close()
+		if err != nil {
+			return
+		}
+
+		input := bufio.NewScanner(fd)
+		for input.Scan() {
+			s := strings.Split(input.Text(), "\t")
+			u := s[7]
+			i, err := strconv.Atoi(s[1])
+			errExit(err, "error: cannot read story ID")
+
+			hn.urls = append(hn.urls, url{url: u, id: i})
+		}
+	}
+
+	sort.Slice(hn.urls, func(i, j int) bool {
+		return hn.urls[i].url <= hn.urls[j].url
+	})
+}
+
 func readLrsProcessedIDs(progDir string) []string {
 	var processedIDs []string
 
@@ -158,6 +194,18 @@ func strExists(s []string, el string) bool {
 		return false
 	}
 	return s[i] == el
+}
+
+func urlExists(hn *hnResults, url string) (bool, int) {
+	idx := sort.Search(len(hn.urls), func(i int) bool {
+		return string(hn.urls[i].url) >= url
+	})
+
+	if hn.urls[idx].url == url {
+		return true, idx
+	} else {
+		return false, 0
+	}
 }
 
 func intExists(s []int, el int) bool {
@@ -279,8 +327,6 @@ func getStory(id int, client *http.Client, now time.Time) hnStory {
 }
 
 func filterHn(hn *hnResults, client *http.Client, now time.Time) {
-	count := 0
-
 	blockedDomains := readBlockedDomains()
 	blockedKeywords := readBlockedKeywords()
 
@@ -292,11 +338,6 @@ func filterHn(hn *hnResults, client *http.Client, now time.Time) {
 
 		story := getStory(id, client, now)
 		classifyStory(story, blockedDomains, blockedKeywords, hn)
-
-		count++
-		if count > 50000 {
-			break
-		}
 	}
 }
 
@@ -354,12 +395,13 @@ func filterLrs(lrsStories []lrsStory, lrsProcessedIDs *[]string) []lrsStory {
 }
 
 func logHnStories(hn *hnResults, progDir string) {
-	storiesToFile(progDir, "hn_main.tsv", hn.mainStories)
-	storiesToFile(progDir, "hn_blocked.tsv", hn.blockedStories)
-	storiesToFile(progDir, "hn_vlow.tsv", hn.vLowStories)
+	storiesToFile(progDir, "hn_main.tsv", hn.mainStories, true)
+	storiesToFile(progDir, "hn_blocked.tsv", hn.blockedStories, true)
+	storiesToFile(progDir, "hn_vlow.tsv", hn.vLowStories, true)
+	storiesToFile(progDir, "hn_low.tsv.tmp", hn.lowStories, false)
 }
 
-func storiesToFile(progDir, file string, stories []hnStory) {
+func storiesToFile(progDir, file string, stories []hnStory, logID bool) {
 	fdOpts := os.O_CREATE | os.O_APPEND | os.O_WRONLY
 
 	fd, err := os.OpenFile(progDir+file, fdOpts, 0644)
@@ -372,7 +414,9 @@ func storiesToFile(progDir, file string, stories []hnStory) {
 
 	for _, story := range stories {
 		fmt.Fprintln(fd, logHnLine(story))
-		fmt.Fprintln(fdIDs, story.ID)
+		if logID {
+			fmt.Fprintln(fdIDs, story.ID)
+		}
 	}
 }
 
@@ -449,9 +493,17 @@ func prepareHtml(hn *hnResults, lrsStories *[]lrsStory, progDir string,
 	}
 
 	for _, story := range *lrsStories {
+		hnExists, idx := urlExists(hn, story.Url)
+
 		fmt.Fprintf(fd, "%s\n", story.Title)
 		fmt.Fprintf(fd, "<a href='%s'>link</a>", story.Url)
 		fmt.Fprintf(fd, " <a href='%s'>lrs</a>", story.LrsUrl)
+		if hnExists {
+			hnUrl := hnItemUrl + strconv.Itoa(hn.urls[idx].id)
+			fmt.Fprintf(fd, " <a href='%s'>hn</a>", hnUrl)
+		} else {
+			fmt.Fprintf(fd, " -")
+		}
 		fmt.Fprintln(fd, "\n")
 	}
 
