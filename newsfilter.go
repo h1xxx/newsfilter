@@ -69,7 +69,7 @@ func main() {
 	fmt.Println("getting already processed HN IDs...")
 	readHnProcessedIDs(&hn, progDir)
 	fmt.Println("filtering HN stories...")
-	filterHn(&hn, client, now)
+	filterHn(&hn, client, now, progDir)
 
 	fmt.Println("getting lobste.rs stories...")
 	lrsStories := getLrsStories(client)
@@ -112,10 +112,10 @@ func main() {
 	fmt.Println(progDir + outFile)
 }
 
-func readBlockedDomains() []string {
+func readBlockedDomains(progDir string) []string {
 	var blockedDomains []string
 
-	f, err := os.Open("blocked.domains")
+	f, err := os.Open(progDir + "blocked.domains")
 	errExit(err, "error: cannot read file")
 	defer f.Close()
 
@@ -128,10 +128,10 @@ func readBlockedDomains() []string {
 	return blockedDomains
 }
 
-func readBlockedKeywords() []string {
+func readBlockedKeywords(progDir string) []string {
 	var blockedKeywords []string
 
-	f, err := os.Open("blocked.keywords")
+	f, err := os.Open(progDir + "blocked.keywords")
 	errExit(err, "error: cannot read file")
 	defer f.Close()
 
@@ -351,9 +351,11 @@ func getStory(id int, client *http.Client, now time.Time) hnStory {
 	return story
 }
 
-func filterHn(hn *hnResults, client *http.Client, now time.Time) {
-	blockedDomains := readBlockedDomains()
-	blockedKeywords := readBlockedKeywords()
+func filterHn(hn *hnResults, client *http.Client, now time.Time,
+	progDir string) {
+
+	blockedDomains := readBlockedDomains(progDir)
+	blockedKeywords := readBlockedKeywords(progDir)
 
 	for _, id := range hn.storyIDs {
 
