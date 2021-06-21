@@ -1,0 +1,6 @@
+notes:
+
+- input and output data is stored in ~/.config/newsfilter
+- first run is quite long as all current hacker news stories are fetched
+- next run contains only new stories, i.e. stories that were not included in
+  the previous html file
