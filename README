@@ -7,7 +7,7 @@ notes
 - next run contains only new stories, i.e. stories that were not included in
   the previous html file
 
-- blocked.domains is a list of domains that ususally provide non-technical
+- blocked.domains is a list of domains that usually provide non-technical
   articles on hacker news
 
 - blocked.keywords are searched for in hacker news story titles, but not in
