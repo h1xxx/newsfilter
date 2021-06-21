@@ -297,7 +297,15 @@ func getLrsStories(client *http.Client) []lrsStory {
 	err = json.Unmarshal(body, &storiesNew)
 	errExit(err, "error: cannot parse json")
 
-	return append(storiesHot, storiesNew...)
+	stories := append(storiesHot, storiesNew...)
+
+	for i, story := range stories {
+		if story.Url == "" {
+			(&stories[i]).Url = story.LrsUrl
+		}
+	}
+
+	return stories
 }
 
 func uniqueInts(ints []int) []int {
