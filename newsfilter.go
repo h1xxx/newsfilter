@@ -110,7 +110,7 @@ func main() {
 		len(lrsProcessedIDs),
 		len(lrsStories))
 	dt := fmt.Sprintf("%d-%.2d-%.2d_%.2d%.2d",
-	now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
+		now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
 	outFile := "news_" + dt + ".html"
 	fmt.Println(progDir + outFile)
 }
@@ -311,7 +311,7 @@ func getLrsStories(client *http.Client, now time.Time) []lrsStory {
 		}
 
 		layout := "2006-01-02T15:04:05.999999999Z07:00"
-		t, err := time.Parse(layout,story.TimeS)
+		t, err := time.Parse(layout, story.TimeS)
 		errExit(err, "error: cannot parse time")
 		local, _ := time.LoadLocation("Local")
 
@@ -541,8 +541,7 @@ func printHnStory(fd *os.File, story hnStory) {
 	hnItemUrl := "https://news.ycombinator.com/item?id="
 	hnUrl := hnItemUrl + strconv.Itoa(story.ID)
 
-	printString := fmt.Sprintf(
-		"<a href='%s'>%s</a>\n" +
+	printString := fmt.Sprintf("<a href='%s'>%s</a>\n"+
 		"%dh ago, %d points, <a href='%s'>%d comments</a> (%s)\n",
 		story.Url,
 		story.Title,
@@ -566,8 +565,7 @@ func printLrsStory(fd *os.File, story lrsStory, hn *hnResults) {
 		hnLink = fmt.Sprintf("<a href='%s'>hn</a>", hnUrl)
 	}
 
-	printString := fmt.Sprintf(
-		"<a href='%s'>%s</a>\n" +
+	printString := fmt.Sprintf("<a href='%s'>%s</a>\n"+
 		"%dh ago, %d points, <a href='%s'>%d comments</a> (%s) (%s)\n",
 		story.Url,
 		story.Title,
