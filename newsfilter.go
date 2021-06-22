@@ -37,6 +37,9 @@ type lrsStory struct {
 	Score    int    `json:"score"`
 	Comments int    `json:"comment_count"`
 	LrsUrl   string `json:"comments_url"`
+	Domain   string
+	Time     time.Time
+	Hours    int
 }
 
 type hnResults struct {
@@ -72,7 +75,7 @@ func main() {
 	filterHn(&hn, client, now, progDir)
 
 	fmt.Println("getting lobste.rs stories...")
-	lrsStories := getLrsStories(client)
+	lrsStories := getLrsStories(client, now)
 	fmt.Println("getting already processed lobste.rs IDs...")
 	lrsProcessedIDs := readLrsProcessedIDs(progDir)
 	fmt.Println("filtering lobste.rs stories...")
@@ -273,7 +276,7 @@ func getHnStoryIDs(client *http.Client, hn *hnResults) {
 	hn.storyIDs = uniqueInts(hn.storyIDs)
 }
 
-func getLrsStories(client *http.Client) []lrsStory {
+func getLrsStories(client *http.Client, now time.Time) []lrsStory {
 
 	var storiesHot, storiesNew []lrsStory
 	urlHot := "https://lobste.rs/hottest.json"
@@ -302,7 +305,18 @@ func getLrsStories(client *http.Client) []lrsStory {
 	for i, story := range stories {
 		if story.Url == "" {
 			(&stories[i]).Url = story.LrsUrl
+			(&stories[i]).Domain = "lobste.rs"
+		} else {
+			(&stories[i]).Domain = strings.Split(story.Url, "/")[2]
 		}
+
+		layout := "2006-01-02T15:04:05.999999999Z07:00"
+		t, err := time.Parse(layout,story.TimeS)
+		errExit(err, "error: cannot parse time")
+		local, _ := time.LoadLocation("Local")
+
+		(&stories[i]).Time = t.In(local)
+		(&stories[i]).Hours = int(now.Sub(t.In(local)).Hours())
 	}
 
 	return stories
@@ -502,7 +516,6 @@ func prepareHtml(hn *hnResults, lrsStories *[]lrsStory, progDir string,
 	dt := fmt.Sprintf("%d-%.2d-%.2d_%.2d%.2d",
 		now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
 	file := "news_" + dt + ".html"
-	hnItemUrl := "https://news.ycombinator.com/item?id="
 
 	fdOpts := os.O_CREATE | os.O_TRUNC | os.O_WRONLY
 	fd, err := os.OpenFile(progDir+file, fdOpts, 0644)
@@ -511,30 +524,62 @@ func prepareHtml(hn *hnResults, lrsStories *[]lrsStory, progDir string,
 
 	fmt.Fprintln(fd, htmlHeader)
 
+	fmt.Fprintln(fd, "* Hacker News\n")
 	for _, story := range hn.mainStories {
-		fmt.Fprintf(fd, "%s\n", story.Title)
-		fmt.Fprintf(fd, "<a href='%s'>link</a>", story.Url)
-		hnUrl := hnItemUrl + strconv.Itoa(story.ID)
-		fmt.Fprintf(fd, " <a href='%s'>hn</a>", hnUrl)
-		fmt.Fprintln(fd, "\n")
+		printHnStory(fd, story)
 	}
 
+	fmt.Fprintln(fd, "\n* lobste.rs\n")
 	for _, story := range *lrsStories {
-		hnExists, idx := urlExists(hn, story.Url)
-
-		fmt.Fprintf(fd, "%s\n", story.Title)
-		fmt.Fprintf(fd, "<a href='%s'>link</a>", story.Url)
-		fmt.Fprintf(fd, " <a href='%s'>lrs</a>", story.LrsUrl)
-		if hnExists {
-			hnUrl := hnItemUrl + strconv.Itoa(hn.urls[idx].id)
-			fmt.Fprintf(fd, " <a href='%s'>hn</a>", hnUrl)
-		} else {
-			fmt.Fprintf(fd, " -")
-		}
-		fmt.Fprintln(fd, "\n")
+		printLrsStory(fd, story, hn)
 	}
 
 	fmt.Fprintln(fd, htmlFooter)
+}
+
+func printHnStory(fd *os.File, story hnStory) {
+	hnItemUrl := "https://news.ycombinator.com/item?id="
+	hnUrl := hnItemUrl + strconv.Itoa(story.ID)
+
+	printString := fmt.Sprintf(
+		"<a href='%s'>%s</a>\n" +
+		"%dh ago, %d points, <a href='%s'>%d comments</a> (%s)\n",
+		story.Url,
+		story.Title,
+		story.Hours,
+		story.Score,
+		hnUrl,
+		story.Comments,
+		story.Domain,
+	)
+
+	fmt.Fprintln(fd, printString)
+}
+
+func printLrsStory(fd *os.File, story lrsStory, hn *hnResults) {
+	hnItemUrl := "https://news.ycombinator.com/item?id="
+	hnLink := "-"
+
+	hnExists, idx := urlExists(hn, story.Url)
+	if hnExists {
+		hnUrl := hnItemUrl + strconv.Itoa(hn.urls[idx].id)
+		hnLink = fmt.Sprintf("<a href='%s'>hn</a>", hnUrl)
+	}
+
+	printString := fmt.Sprintf(
+		"<a href='%s'>%s</a>\n" +
+		"%dh ago, %d points, <a href='%s'>%d comments</a> (%s) (%s)\n",
+		story.Url,
+		story.Title,
+		story.Hours,
+		story.Score,
+		story.LrsUrl,
+		story.Comments,
+		story.Domain,
+		hnLink,
+	)
+
+	fmt.Fprintln(fd, printString)
 }
 
 func errExit(err error, msg string) {
