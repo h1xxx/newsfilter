@@ -425,7 +425,7 @@ func filterLrs(lrsStories []lrsStory, lrsProcessedIDs *[]string) []lrsStory {
 		if strExists(*lrsProcessedIDs, story.ID) {
 			continue
 		}
-		if story.Score > 10 || story.Comments > 5 {
+		if story.Score > 20 || story.Comments > 5 {
 			result = append(result, story)
 			*lrsProcessedIDs = append(*lrsProcessedIDs, story.ID)
 			// expensive; fix if processing slows down
