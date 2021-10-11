@@ -329,7 +329,7 @@ func getLrsStories(client *http.Client, now time.Time) []lrsStory {
 			(&stories[i]).Url = story.LrsUrl
 			(&stories[i]).Domain = "lobste.rs"
 		} else {
-			(&stories[i]).Domain = strings.Split(story.Url, "/")[2]
+			(&stories[i]).Domain = urlToDomain(story.Url)
 		}
 
 		layout := "2006-01-02T15:04:05.999999999Z07:00"
@@ -355,6 +355,24 @@ func uniqueInts(ints []int) []int {
 	return ints[:j]
 }
 
+func urlToDomain(url string) string {
+	domain := strings.Split(url, "/")[2]
+
+	if domain == "github.com" || domain == "gitlab.com" {
+		domain += "/" + strings.Split(url, "/")[3]
+	}
+
+	prefixes := []string{"git.", "www.", "engineering."}
+	for _, p := range prefixes {
+		dots := len(strings.Split(domain, "."))
+		if dots > 1 && strings.HasPrefix(domain, p) {
+			domain = strings.TrimPrefix(domain, p)
+		}
+	}
+
+	return domain
+}
+
 func getStory(id int, client *http.Client, now time.Time) hnStory {
 	var story hnStory
 
@@ -376,17 +394,7 @@ func getStory(id int, client *http.Client, now time.Time) hnStory {
 		story.Url = "https://news.ycombinator.com/item?id=" +
 			strconv.Itoa(id)
 	}
-	story.Domain = strings.Split(story.Url, "/")[2]
-	if story.Domain == "github.com" || story.Domain == "gitlab.com" {
-		story.Domain += "/" + strings.Split(story.Url, "/")[3]
-	}
-	prefixes := []string{"git.", "www.", "engineering."}
-	for _, p := range prefixes {
-		dots := len(strings.Split(story.Domain, "."))
-		if dots > 1 && strings.HasPrefix(story.Domain, p) {
-			story.Domain = strings.TrimPrefix(story.Domain, p)
-		}
-	}
+	story.Domain = urlToDomain(story.Url)
 	story.Time = time.Unix(story.TimeI, 0)
 	story.Hours = int(now.Sub(story.Time).Hours())
 	if story.Hours == 0 {
@@ -601,13 +609,15 @@ func printLrsStory(fd *os.File, story lrsStory, hn *hnResults) {
 	}
 
 	printString := fmt.Sprintf("<a href='%s'>%s</a>\n"+
-		"%dh ago, %d points, <a href='%s'>%d comments</a> (%s) (%s)\n",
+		"%dh ago, %d points, <a href='%s'>%d comments</a> "+
+		"(<a href='https://lobste.rs/domain/%s'>%s</a>) (%s)\n",
 		story.Url,
 		story.Title,
 		story.Hours,
 		story.Score,
 		story.LrsUrl,
 		story.Comments,
+		story.Domain,
 		story.Domain,
 		hnLink,
 	)
