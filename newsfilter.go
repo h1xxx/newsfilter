@@ -377,8 +377,15 @@ func getStory(id int, client *http.Client, now time.Time) hnStory {
 			strconv.Itoa(id)
 	}
 	story.Domain = strings.Split(story.Url, "/")[2]
-	if strings.HasPrefix(story.Domain, "www.") {
-		story.Domain = strings.TrimPrefix(story.Domain, "www.")
+	if story.Domain == "github.com" || story.Domain == "gitlab.com" {
+		story.Domain += "/" + strings.Split(story.Url, "/")[3]
+	}
+	prefixes := []string{"git.", "www.", "engineering."}
+	for _, p := range prefixes {
+		dots := len(strings.Split(story.Domain, "."))
+		if dots > 1 && strings.HasPrefix(story.Domain, p) {
+			story.Domain = strings.TrimPrefix(story.Domain, p)
+		}
 	}
 	story.Time = time.Unix(story.TimeI, 0)
 	story.Hours = int(now.Sub(story.Time).Hours())
@@ -423,19 +430,19 @@ func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
 	case story.Hours > 72 && story.Score >= 100:
 		hn.mainStories = append(hn.mainStories, story)
 
-	case story.Hours > 72 && story.Score < 5:
+	case story.Hours > 72 && story.Score < 100:
 		hn.vLowStories = append(hn.vLowStories, story)
 
-	case story.Hours > 36 && story.Score < 5:
+	case story.Hours > 36 && story.Score < 50:
 		hn.vLowStories = append(hn.vLowStories, story)
 
-	case story.Hours > 24 && story.Score < 5:
+	case story.Hours > 24 && story.Score < 20:
 		hn.vLowStories = append(hn.vLowStories, story)
 
-	case story.Hours > 12 && story.Score < 5:
+	case story.Hours > 12 && story.Score < 10:
 		hn.vLowStories = append(hn.vLowStories, story)
 
-	case story.Score < 100 && story.ScoreAvg < 4:
+	case story.Score < 100 && story.ScoreAvg < 20:
 		hn.lowStories = append(hn.lowStories, story)
 
 	default:
@@ -567,13 +574,16 @@ func printHnStory(fd *os.File, story hnStory) {
 	hnUrl := hnItemUrl + strconv.Itoa(story.ID)
 
 	printString := fmt.Sprintf("<a href='%s'>%s</a>\n"+
-		"%dh ago, %d points, <a href='%s'>%d comments</a> (%s)\n",
+		"%dh ago, %d points, <a href='%s'>%d comments</a> "+
+		"(<a href='https://news.ycombinator.com/from?site=%s'>"+
+		"%s</a>)\n",
 		story.Url,
 		story.Title,
 		story.Hours,
 		story.Score,
 		hnUrl,
 		story.Comments,
+		story.Domain,
 		story.Domain,
 	)
 

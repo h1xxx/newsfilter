@@ -1,7 +1,9 @@
 *.europa.eu
-*.microsoft.com
 *.navy.mil
+*.nih.gov
 *.stlouisfed.org
+*microsoft.com
+*news.yahoo.com
 37signals.com
 99percentinvisible.org
 9to5mac.com
@@ -14,6 +16,7 @@ apnews.com
 apple.com
 appleinsider.com
 arxiv.org
+astralcodexten.substack.com
 astro.build
 atlasobscura.com
 aws.amazon.com
@@ -104,7 +107,6 @@ nautil.us
 nbcnews.com
 news.cnet.com
 news.un.org
-news.yahoo.com
 news.yale.edu
 newscientist.com
 newsweek.com
@@ -113,7 +115,6 @@ niemanlab.org
 ninds.nih.gov
 nltimes.nl
 noaa.gov
-npr.org
 npr.org
 nypost.com
 nytimes.com
@@ -150,7 +151,6 @@ scientificamerican.com
 scmp.com
 seattletimes.com
 sec.gov
-slate.com
 slate.com
 slideshare.net
 spectrum.ieee.org

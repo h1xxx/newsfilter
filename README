@@ -16,17 +16,11 @@ notes
  
 - filtering rules are stored in filterHn and filterLrs functions
 
+
+
 todo
 
-link to domain
-number of articles in last 12 months for the domain
 make get requests in one go
 sort lobste.rs article by date
-for github and gilatb show first part of url
 fix missing stats for lobste.rs
-drop all subdomains from nih.gov like www.ncbi.nlm.nih.gov, currently it's all
-
 on http error skip processing
-
-add a star in parsing blocked domains
-drop www
