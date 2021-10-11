@@ -69,15 +69,19 @@ func main() {
 
 	fmt.Println("getting HN stories...")
 	getHnStoryIDs(client, &hn)
+
 	fmt.Println("getting already processed HN IDs...")
 	readHnProcessedIDs(&hn, progDir)
+
 	fmt.Println("filtering HN stories...")
 	filterHn(&hn, client, now, progDir)
 
 	fmt.Println("getting lobste.rs stories...")
 	lrsStories := getLrsStories(client, now)
+
 	fmt.Println("getting already processed lobste.rs IDs...")
 	lrsProcessedIDs := readLrsProcessedIDs(progDir)
+
 	fmt.Println("filtering lobste.rs stories...")
 	lrsStories = filterLrs(lrsStories, &lrsProcessedIDs)
 
@@ -87,6 +91,7 @@ func main() {
 
 	fmt.Println("reading history of HN URLs...")
 	readHnUrls(&hn, progDir)
+
 	fmt.Println("preparing final html file...")
 	prepareHtml(&hn, &lrsStories, progDir, now)
 
@@ -248,6 +253,23 @@ func keywordFound(keywords []string, title string) bool {
 	return false
 }
 
+func blockDomain(domains []string,  domain string) bool {
+	for _, blockedDomain := range domains {
+		switch {
+		case blockedDomain == "":
+			continue
+		case strings.HasPrefix(blockedDomain, "*"):
+			blockedDomain = strings.TrimPrefix(blockedDomain, "*")
+			if strings.HasSuffix(domain, blockedDomain) {
+				return true
+			}
+		case domain == blockedDomain:
+			return true
+		}
+	}
+	return false
+}
+
 func getHnStoryIDs(client *http.Client, hn *hnResults) {
 	var topIDs, bestIDs []int
 	urlTop := "https://hacker-news.firebaseio.com/v0/topstories.json"
@@ -355,6 +377,9 @@ func getStory(id int, client *http.Client, now time.Time) hnStory {
 			strconv.Itoa(id)
 	}
 	story.Domain = strings.Split(story.Url, "/")[2]
+	if strings.HasPrefix(story.Domain, "www.") {
+		story.Domain = strings.TrimPrefix(story.Domain, "www.")
+	}
 	story.Time = time.Unix(story.TimeI, 0)
 	story.Hours = int(now.Sub(story.Time).Hours())
 	if story.Hours == 0 {
@@ -389,7 +414,7 @@ func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
 	case story.Type != "story":
 		hn.blockedStories = append(hn.blockedStories, story)
 
-	case strExists(blockedDomains, story.Domain):
+	case blockDomain(blockedDomains, story.Domain):
 		hn.blockedStories = append(hn.blockedStories, story)
 
 	case keywordFound(blockedKeywords, story.Title):
@@ -398,19 +423,19 @@ func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
 	case story.Hours > 72 && story.Score >= 100:
 		hn.mainStories = append(hn.mainStories, story)
 
-	case story.Hours > 72 && story.Score < 100:
+	case story.Hours > 72 && story.Score < 5:
 		hn.vLowStories = append(hn.vLowStories, story)
 
-	case story.Hours > 36 && story.Score < 50:
+	case story.Hours > 36 && story.Score < 5:
 		hn.vLowStories = append(hn.vLowStories, story)
 
-	case story.Hours > 24 && story.Score < 20:
+	case story.Hours > 24 && story.Score < 5:
 		hn.vLowStories = append(hn.vLowStories, story)
 
-	case story.Hours > 12 && story.Score < 10:
+	case story.Hours > 12 && story.Score < 5:
 		hn.vLowStories = append(hn.vLowStories, story)
 
-	case story.Score < 100 && story.ScoreAvg < 20:
+	case story.Score < 100 && story.ScoreAvg < 4:
 		hn.lowStories = append(hn.lowStories, story)
 
 	default:
