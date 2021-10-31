@@ -1,10 +1,16 @@
+*.apa.org
 *.europa.eu
+*.fb.com
+*.kalzumeus.com
 *.navy.mil
 *.nih.gov
+*.reuters.com
 *.stlouisfed.org
+*.wsu.edu
 *microsoft.com
 *news.yahoo.com
 37signals.com
+8newsnow.com
 99percentinvisible.org
 9to5mac.com
 aclu.org
@@ -12,6 +18,7 @@ acsh.org
 aeon.co
 amazon.com
 aninjusticemag.com
+aopa.org
 apnews.com
 apple.com
 appleinsider.com
@@ -40,10 +47,13 @@ businessweek.com
 buzzfeednews.com
 cbc.ca
 cbsnews.com
+chicagomag.com
 cnbc.com
 cnet.com
 cnn.com
 cointelegraph.com
+dailydot.com
+damninteresting.com
 daringfireball.net
 deadline.com
 destevez.net
@@ -54,6 +64,7 @@ di.se
 digiday.com
 docs.google.com
 dw.com
+dynomight.net
 eater.com
 economist.com
 edition.cnn.com
@@ -73,14 +84,17 @@ fstoppers.com
 ft.com
 ftc.gov
 gizmodo.com
+goodnewsnetwork.org
 inc.com
 independent.co.uk
+independent.com
 inews.co.uk
 infoq.com
 interestingengineering.com
 intuitiveexplanations.com
 investors.modernatx.com
 jalopnik.com
+kalzumeus.com
 klarna.com
 kline.sh
 latimes.com
@@ -106,6 +120,7 @@ nature.com
 nautil.us
 nbcnews.com
 news.cnet.com
+news.mit.edu
 news.un.org
 news.yale.edu
 newscientist.com
@@ -131,7 +146,9 @@ politico.com
 politico.eu
 post-gazette.com
 propublica.org
+prospectmagazine.co.uk
 protocol.com
+psypost.org
 pv-tech.org
 quantamagazine.org
 quora.com
@@ -151,6 +168,7 @@ scientificamerican.com
 scmp.com
 seattletimes.com
 sec.gov
+sfconservancy.org
 slate.com
 slideshare.net
 spectrum.ieee.org
@@ -158,6 +176,7 @@ spin.atomicobject.com
 statista.com
 statmodeling.stat.columbia.edu
 statnews.com
+stratechery.com
 stripe.com
 sublimetext.com
 techcrunch.com
@@ -168,6 +187,7 @@ telegraph.co.uk
 text.npr.org
 theartnewspaper.com
 theatlantic.com
+thebulletin.org
 theconversation.com
 thecorrespondent.com
 thedrive.com
@@ -193,6 +213,7 @@ washingtonpost.com
 wildland.io
 wired.com
 worksinprogress.co
+world-nuclear-news.org
 wsj.com
 yager.io
 youtu.be
