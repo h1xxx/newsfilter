@@ -356,10 +356,13 @@ func uniqueInts(ints []int) []int {
 }
 
 func urlToDomain(url string) string {
-	domain := strings.Split(url, "/")[2]
+	urlSplit := strings.Split(url, "/")
+	domain := urlSplit[2]
 
-	if domain == "github.com" || domain == "gitlab.com" {
-		domain += "/" + strings.Split(url, "/")[3]
+	if (domain == "github.com" || domain == "gitlab.com") &&
+		len(urlSplit) > 3 {
+
+		domain += "/" + urlSplit[3]
 	}
 
 	prefixes := []string{"git.", "www.", "engineering."}
