@@ -1,3 +1,13 @@
+
+newsfilter
+
+A small program to fetch articles from Hacker News and lobste.rs and extract
+only technical ones with use of blacklisted domains and keywords.
+
+Prepares an html file with a list of articles that can be read from any www
+browser.
+
+
 notes
 
 - input and output data is stored in ~/.config/newsfilter
