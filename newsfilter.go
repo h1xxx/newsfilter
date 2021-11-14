@@ -436,7 +436,12 @@ func filterHn(hn *hnResults, client *http.Client, now time.Time,
 			wg.Done()
 		}(id)
 	}
+
 	wg.Wait()
+
+	sort.Slice(hn.mainStories, func(i, j int) bool {
+		return hn.mainStories[i].ID <= hn.mainStories[j].ID
+	})
 }
 
 func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
@@ -489,6 +494,11 @@ func filterLrs(lrsStories []lrsStory, lrsProcessedIDs *[]string) []lrsStory {
 			sort.Strings(*lrsProcessedIDs)
 		}
 	}
+
+	sort.Slice(result, func(i, j int) bool {
+		return result[i].Hours >= result[j].Hours
+	})
+
 	return result
 }
 
