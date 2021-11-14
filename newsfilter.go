@@ -11,6 +11,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -56,6 +57,8 @@ type url struct {
 	url string
 	id  int
 }
+
+var mu = &sync.Mutex{}
 
 func main() {
 	var hn hnResults
@@ -411,6 +414,8 @@ func getStory(id int, client *http.Client, now time.Time) hnStory {
 func filterHn(hn *hnResults, client *http.Client, now time.Time,
 	progDir string) {
 
+	wg := sync.WaitGroup{}
+
 	blockedDomains := readBlockedDomains(progDir)
 	blockedKeywords := readBlockedKeywords(progDir)
 
@@ -420,9 +425,18 @@ func filterHn(hn *hnResults, client *http.Client, now time.Time,
 			continue
 		}
 
-		story := getStory(id, client, now)
-		classifyStory(story, blockedDomains, blockedKeywords, hn)
+		wg.Add(1)
+
+		go func(id int) {
+			story := getStory(id, client, now)
+			mu.Lock()
+			classifyStory(story,
+				blockedDomains, blockedKeywords, hn)
+			mu.Unlock()
+			wg.Done()
+		}(id)
 	}
+	wg.Wait()
 }
 
 func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
