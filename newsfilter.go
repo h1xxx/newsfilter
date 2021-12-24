@@ -103,7 +103,7 @@ func main() {
 		"processed stories: %d\n"+
 		"blocked stories: %d\n"+
 		"low score stories: %d\n"+
-		"very low score stories: %d\n"+
+		"permanently low score stories: %d\n"+
 		"main stories: %d\n",
 		len(hn.storyIDs),
 		len(hn.processedIDs),
@@ -187,9 +187,9 @@ func readHnUrls(hn *hnResults, progDir string) {
 		input := bufio.NewScanner(fd)
 		for input.Scan() {
 			s := strings.Split(input.Text(), "\t")
-			u := s[7]
-			i, err := strconv.Atoi(s[1])
-			errExit(err, "error: cannot read story ID")
+			u := s[8]
+			i, err := strconv.Atoi(s[2])
+			errExit(err, "error: cannot read story ID: "+s[2])
 
 			hn.urls = append(hn.urls, url{url: u, id: i})
 		}
@@ -549,6 +549,7 @@ func logLrsStories(lrsStories []lrsStory, progDir string) {
 
 func logHnLine(story hnStory) string {
 	return fmt.Sprintf("%s\t"+
+		"%2.2d:%2.2d\t"+
 		"%d\t"+
 		"%d\t"+
 		"%d\t"+
@@ -557,6 +558,7 @@ func logHnLine(story hnStory) string {
 		"%s\t"+
 		"%s",
 		story.Time.Format("2006-01-02"),
+		story.Time.Hour(), story.Time.Minute(),
 		story.ID,
 		story.Hours,
 		story.Score,
