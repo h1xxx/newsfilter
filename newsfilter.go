@@ -98,7 +98,7 @@ func main() {
 	fmt.Println("preparing final html file...")
 	prepareHtml(&hn, &lrsStories, progDir, now)
 
-	fmt.Println("\nHN stats:")
+	fmt.Println("\nHN stats")
 	fmt.Printf("fetched stories: %d\n"+
 		"processed stories: %d\n"+
 		"blocked stories: %d\n"+
@@ -112,7 +112,7 @@ func main() {
 		len(hn.vLowStories),
 		len(hn.mainStories))
 
-	fmt.Println("\nlobste.rs stats:")
+	fmt.Println("\nlobste.rs stats")
 	fmt.Printf("processed stories: %d\n"+
 		"main stories: %d\n\n",
 		len(lrsProcessedIDs),
@@ -121,6 +121,8 @@ func main() {
 		now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
 	outFile := "news_" + dt + ".html"
 	fmt.Println(progDir + outFile)
+
+	clearTmp(progDir)
 }
 
 func readBlockedDomains(progDir string) []string {
@@ -651,6 +653,15 @@ func printLrsStory(fd *os.File, story lrsStory, hn *hnResults) {
 
 	fmt.Fprintln(fd, printString)
 }
+
+func clearTmp(progDir string) {
+	tmpFile := progDir + "hn_low.tsv.tmp"
+	info, _ := os.Stat(tmpFile)
+	if info.Size() > 4 * 1024 * 1024 {
+		os.Remove(tmpFile)
+	}
+}
+
 
 func errExit(err error, msg string) {
 	if err != nil {
