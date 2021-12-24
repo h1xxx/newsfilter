@@ -44,13 +44,13 @@ type lrsStory struct {
 }
 
 type hnResults struct {
-	mainStories    []hnStory
-	blockedStories []hnStory
-	lowStories     []hnStory
-	vLowStories    []hnStory
-	storyIDs       []int
-	processedIDs   []int
-	urls           []url
+	mainStories     []hnStory
+	blockedStories  []hnStory
+	lowStories      []hnStory
+	permaLowStories []hnStory
+	storyIDs        []int
+	processedIDs    []int
+	urls            []url
 }
 
 type url struct {
@@ -109,7 +109,7 @@ func main() {
 		len(hn.processedIDs),
 		len(hn.blockedStories),
 		len(hn.lowStories),
-		len(hn.vLowStories),
+		len(hn.permaLowStories),
 		len(hn.mainStories))
 
 	fmt.Println("\nlobste.rs stats")
@@ -174,7 +174,7 @@ func readHnProcessedIDs(hn *hnResults, progDir string) {
 }
 
 func readHnUrls(hn *hnResults, progDir string) {
-	files := []string{"hn_main.tsv", "hn_vlow.tsv",
+	files := []string{"hn_main.tsv", "hn_permalow.tsv",
 		"hn_blocked.tsv", "hn_low.tsv.tmp"}
 
 	for _, f := range files {
@@ -258,7 +258,7 @@ func keywordFound(keywords []string, title string) bool {
 	return false
 }
 
-func blockDomain(domains []string,  domain string) bool {
+func blockDomain(domains []string, domain string) bool {
 	for _, blockedDomain := range domains {
 		switch {
 		case blockedDomain == "":
@@ -463,16 +463,16 @@ func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
 		hn.mainStories = append(hn.mainStories, story)
 
 	case story.Hours > 72 && story.Score < 100:
-		hn.vLowStories = append(hn.vLowStories, story)
+		hn.permaLowStories = append(hn.permaLowStories, story)
 
 	case story.Hours > 36 && story.Score < 50:
-		hn.vLowStories = append(hn.vLowStories, story)
+		hn.permaLowStories = append(hn.permaLowStories, story)
 
 	case story.Hours > 24 && story.Score < 20:
-		hn.vLowStories = append(hn.vLowStories, story)
+		hn.permaLowStories = append(hn.permaLowStories, story)
 
 	case story.Hours > 12 && story.Score < 10:
-		hn.vLowStories = append(hn.vLowStories, story)
+		hn.permaLowStories = append(hn.permaLowStories, story)
 
 	case story.Score < 100 && story.ScoreAvg < 20:
 		hn.lowStories = append(hn.lowStories, story)
@@ -507,7 +507,7 @@ func filterLrs(lrsStories []lrsStory, lrsProcessedIDs *[]string) []lrsStory {
 func logHnStories(hn *hnResults, progDir string) {
 	storiesToFile(progDir, "hn_main.tsv", hn.mainStories, true)
 	storiesToFile(progDir, "hn_blocked.tsv", hn.blockedStories, true)
-	storiesToFile(progDir, "hn_vlow.tsv", hn.vLowStories, true)
+	storiesToFile(progDir, "hn_permalow.tsv", hn.permaLowStories, true)
 	storiesToFile(progDir, "hn_low.tsv.tmp", hn.lowStories, false)
 }
 
@@ -657,11 +657,10 @@ func printLrsStory(fd *os.File, story lrsStory, hn *hnResults) {
 func clearTmp(progDir string) {
 	tmpFile := progDir + "hn_low.tsv.tmp"
 	info, _ := os.Stat(tmpFile)
-	if info.Size() > 4 * 1024 * 1024 {
+	if info.Size() > 8*1024*1024 {
 		os.Remove(tmpFile)
 	}
 }
-
 
 func errExit(err error, msg string) {
 	if err != nil {
