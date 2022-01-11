@@ -1,5 +1,6 @@
 
 newsfilter
+==========
 
 A small program to fetch articles from Hacker News and lobste.rs and extract
 only technical ones with use of blacklisted domains and keywords.
@@ -7,8 +8,41 @@ only technical ones with use of blacklisted domains and keywords.
 Prepares an html file with a list of articles that can be read from any www
 browser.
 
+Goals:
+- find high quality, but less popular articles
+- save time and energy while browsing hacker news
+- lessen addictive quality of Hacker News, by showing only each article once
+
+Topics permanently blocked by default:
+- news from the outside world
+- business side of things
+- career, interviewing, money etc.
+- so called modern web (large browsers, JavaScript, Node.js etc.)
+- non-free platforms (Windows, Apple)
+- smartphones.
+
+Topics filtered temporarily:
+- Rust - until the language becomes more settled.
+
+
+
+
+dependencies
+============
+
+- go
+
+
+
+building
+========
+
+$ make
+
+
 
 notes
+=====
 
 - input and output data is stored in ~/.config/newsfilter
 
@@ -29,8 +63,7 @@ notes
 
 
 todo
+====
 
-make get requests in one go
-sort lobste.rs article by date
-fix missing stats for lobste.rs
 on http error skip processing
+calculate avg 'commenters/new stories' or 'comments/new stories' ratio per hour
