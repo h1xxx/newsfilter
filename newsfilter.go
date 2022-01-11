@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -247,12 +248,35 @@ func intExists(s []int, el int) bool {
 }
 
 func keywordFound(keywords []string, title string) bool {
-	for _, k := range keywords {
-		switch {
-		case k == "":
+	for _, line := range keywords {
+		words := strings.Split(line, "\t")
+
+		if words[0] == "" || strings.HasPrefix(words[0], "#") {
 			continue
-		case strings.Contains(title, k):
+		}
+
+		if strings.Contains(title, words[0]) {
+			if blockOverride(words, title) {
+				continue
+			} else {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+func blockOverride(words []string, title string) bool {
+	for _, word := range words[1:] {
+		if word[0] != '!' {
+			errExit(errors.New(""), "incorrect keyword: "+word)
+		}
+		word = strings.TrimPrefix(word, "!")
+
+		if strings.Contains(title, word) {
 			return true
+		} else {
+			continue
 		}
 	}
 	return false
@@ -282,19 +306,23 @@ func getHnStoryIDs(client *http.Client, hn *hnResults) {
 
 	req, err := http.NewRequest("GET", urlTop, nil)
 	errExit(err, "error: cannot prepare a request")
+	req.Close = true
 	resp, err := client.Do(req)
 	errExit(err, "error: cannot make a request")
 
 	body, err := ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
 	err = json.Unmarshal(body, &topIDs)
 	errExit(err, "error: cannot parse json")
 
 	req, err = http.NewRequest("GET", urlBest, nil)
 	errExit(err, "error: cannot prepare a request")
+	req.Close = true
 	resp, err = client.Do(req)
 	errExit(err, "error: cannot make a request")
 
 	body, err = ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
 	err = json.Unmarshal(body, &bestIDs)
 	errExit(err, "error: cannot parse json")
 
@@ -311,19 +339,23 @@ func getLrsStories(client *http.Client, now time.Time) []lrsStory {
 
 	req, err := http.NewRequest("GET", urlHot, nil)
 	errExit(err, "error: cannot prepare a request")
+	req.Close = true
 	resp, err := client.Do(req)
 	errExit(err, "error: cannot make a request")
 
 	body, err := ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
 	err = json.Unmarshal(body, &storiesHot)
 	errExit(err, "error: cannot parse json")
 
 	req, err = http.NewRequest("GET", urlNew, nil)
 	errExit(err, "error: cannot prepare a request")
+	req.Close = true
 	resp, err = client.Do(req)
 	errExit(err, "error: cannot make a request")
 
 	body, err = ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
 	err = json.Unmarshal(body, &storiesNew)
 	errExit(err, "error: cannot parse json")
 
@@ -388,11 +420,13 @@ func getStory(id int, client *http.Client, now time.Time) hnStory {
 		strconv.Itoa(id) + ".json"
 
 	req, err := http.NewRequest("GET", url, nil)
+	req.Close = true
 	resp, err := client.Do(req)
 	if err != nil {
 		log.Fatal(err)
 	}
 	body, _ := ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
 	err = json.Unmarshal(body, &story)
 
 	story.By = strings.Replace(story.By, "\t", " ", -1)
