@@ -1,116 +1,218 @@
+ City
  FB 
  YC
+ city
 (YC
 .NET
 AMP
 AWS
+Accident
+Account
 Accounting
+Acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+Addict
+Africa
 Agile
 Airbnb
+Alcohol
+Allege
 Amazon
+America
 Android
 Animat
+App Store
+App store
 Apple
+Apply
 Assange
+Astronom
+Autonomous
 Bank
+Battery
+Bay Area
 Big Tech
+Bike
 Billing
 Biontech
+Blockchain
+Boeing
+Boss
 Brave
+Browser Ext
+Browser ext
 Business
 CEO
 CSS
+Caffeine
+California
+Capital
+Carbon
 Career
 Chess
 Chrome
 Chromium
+Cities
 Climate
 Clinical
 Coffee
+Colorado
 Committee
 Companies
 Company
+Compete
+Congress
 Constitution
 Construct
+Consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+Contract
 Copilot
 Coronavirus
+County
+County
 Court
 Covid
+Culture
 Currency
 Customer
+Cycl
 DNA
 Deadliest
 Deadly
+Demand
 Deno
+Depart
+Desert
 Discord
 Disney
-Economy
+Dollar
+Drug
+Econom
 Edge
 Education
+Electricity
+Elizabeth Holmes
+Elon Musk
 Emoji
 Employ
 Energy
+Engineer	!reverse	!Reverse
+Experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Facebook
 Finance
+Financial
 Fintech
+Fired
 Firefox
+Fires
 Flask
 Flight
 Food
+Fossil
+Founder
+Fund 
+Funding
+Funds
 Google Anal
+Google Pixel
 Google Play
 Government
+Has Died
+Has died
+Health
+High School
+High school
 Hire
 Hiring
+Hong Kong
+Hours
 House
 Housing
+Hundred
+Husband
 IPO
+Infring
+Instagram
 Introvert
+Invent
+Investigat
+James Webb
 JavaScript
 Javascript
+Jeff Bezos
+Job
 Journalist
 Judge
 Judic
 Kids
 Laser
 Launch HN
+Living
+Los Angeles
 M1
 Mac 
 Mac OS
 MacBook
 Macintosh
+Manufactur
 Market
+Michigan
 Microsoft
+Motorcycle
 Mozilla
+Mushrooms
 NFT
 NPM
 Navy
+New York
+New York
 NextJS
 Nobel
 Node.js
 Non-tech
+Notice
 Nuclear
+Omicron
 PHP
 Parental
 Parents
+Patent
 Patient
+Payment
+Peter Thiel
 Pfizer
 Phone
 Physicist
+Pixel 10
+Pixel 6
+Pixel 7
+Pixel 8
+Pixel 9
 Plant
 Plastic
 Politic
 Pompeii
 Population
+Position
 Price
+Prosecute
 Protein
 RNA
+Recipe
+Remote Work
+Remote work
+Retina
+Right To
+Right to
 Robots 
 Rust
 SaaS
 Safari
 Salar
+San Francisco
+San Francisco
+Scien	!comput	!Comput
 Scrum
+Senior
 Series A
 Series B
 Series C
@@ -118,29 +220,63 @@ Series D
 Series E
 Series F
 Series G
+Ship	!censor	!Censor	!owner	!Owner	!source	!Source	!code	!Code
+Shortage
+Side Project
+Side project
+Silicon Valley
+Skill
+Skyscraper
+Social Media
+Social media
+Software Engineer
+Software engineer
+Solar
+Space Station
 SpaceX
+Species
 Startup
 Steve Jobs
+Stripe
+Student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+Study Finds
+Study finds
 Success
 Tax
+Teams
 Teen
 Telescope
 Tesla
+TikTok
+Tim Cook
+Travel
 Treat
 Twitch
+Twitter
 TypeScript
 Typescript
+UI	!TUI	!UUID	!Unix	!terminal	!Terminal	!UNIX	!Linux	!server	!Server
+UX
 Uber
 University
+VS Code
+Vaccina
 Vaccine
+Valuation
+Violating
+Visual Studio
 WASM
 WSL
+Wall Street
 Wasm
+Water
 Web App
 Web Dev
 Web3
 WebAssembly
 WebGL
+Webb Space
+Wife
 Windows
 Wood
 WordPress
@@ -148,71 +284,143 @@ Wordpress
 Work week
 Work-week
 Workweek
+World Cup
+Y Combinator
+YC's
+YC’s
+York City
 Zuckerberg
+accident
+account
 accounting
+acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 acquires
+addict
+alcohol
+allege
 animat
+app store
+apply
+astronom
+autonomous
+battery
 big tech
+bike
 billing
+blockchain
+boss
+browser ext
 business
+caffeine
+capital
+carbon
 career
 chess
+cities
 climate
 clinical
 coffee
 committee
 companies
 company
+compete
+congress
 constitution
 construct
+consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+contract
+county
 court
 covid
+culture
 currency
 customer
+cycl
 deadliest
 deadly
-economy
+demand
+depart
+desert
+dollar
+drug
+econom
 education
+electricity
 emoji
 employ
 energy
+engineer	!reverse	!Reverse
+experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 finance
+financial
 fintech
+fired
+fires
 flight
 food
+fossil
+founder
+fund 
+funding
+funds
 government
+has died
+health
+high school
 hire
 hiring
+hours
 house
 housing
+hundred
+husband
 iOS
 iPhone
 income
+infring
 introvert
+invent
+investigat
+job	!syntax	!Syntax	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 journalist
 judge
 judic
 kids
 laser
+living
 macOS
+manufactur
 market
+motorcycle
+mushrooms
 non-tech
+notice
 npm
 nuclear
 parental
 parents
+patent
 patient
+payment
 phone
 physicist
 plant
 plastic
 politic
 population
+position
 price
 prices
+prosecute
 protein
+recipe
+remote work
+retina
+right to
 robots 
 salar
+scien	!comput	!Comput
+senior
 series A
 series B
 series C
@@ -220,15 +428,34 @@ series D
 series E
 series F
 series G
+ship	!censor	!Censor	!owner	!Owner	!source	!Source	!code	!Code
+shortage
+side project
+skill
+skyscraper
+social media
+software engineer
+solar
+species
 startup
+student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+study finds
 success
-tax
+tax	!syntax	!Syntax	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+teams
 teen
 telescope
+travel
 treat
+vaccina
 vaccine
+valuation	!evaluation
+violating
+water
 web app
 web dev
+web3
+wife
 wood
 work week
 work-week
