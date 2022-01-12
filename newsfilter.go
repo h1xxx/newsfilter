@@ -59,7 +59,13 @@ type url struct {
 	id  int
 }
 
-var mu = &sync.Mutex{}
+type article struct {
+	title string
+	url   string
+}
+
+var MU = &sync.Mutex{}
+var PL = false
 
 func main() {
 	var hn hnResults
@@ -89,15 +95,19 @@ func main() {
 	fmt.Println("filtering lobste.rs stories...")
 	lrsStories = filterLrs(lrsStories, &lrsProcessedIDs)
 
+	fmt.Println("getting badcyber.com articles...")
+	bc := getBadCyberLinks(client, progDir)
+
 	fmt.Println("logging all stories...")
 	logHnStories(&hn, progDir)
 	logLrsStories(lrsStories, progDir)
+	logBcArticles(bc, progDir)
 
 	fmt.Println("reading history of HN URLs...")
 	readHnUrls(&hn, progDir)
 
 	fmt.Println("preparing final html file...")
-	prepareHtml(&hn, &lrsStories, progDir, now)
+	prepareHtml(&hn, &lrsStories, &bc, progDir, now)
 
 	fmt.Println("\nHN stats")
 	fmt.Printf("fetched stories: %d\n"+
@@ -115,9 +125,20 @@ func main() {
 
 	fmt.Println("\nlobste.rs stats")
 	fmt.Printf("processed stories: %d\n"+
-		"main stories: %d\n\n",
+		"main stories: %d\n",
 		len(lrsProcessedIDs),
 		len(lrsStories))
+
+	fmt.Println("\nbadcyber.com stats")
+	var bcCount int
+	for _, articles := range bc {
+		bcCount += len(articles)
+	}
+	fmt.Printf("catch ups: %d\n"+
+		"articles: %d\n\n",
+		len(bc),
+		bcCount)
+
 	dt := fmt.Sprintf("%d-%.2d-%.2d_%.2d%.2d",
 		now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
 	outFile := "news_" + dt + ".html"
@@ -219,6 +240,25 @@ func readLrsProcessedIDs(progDir string) []string {
 	return processedIDs
 }
 
+func readBcLinks(progDir string) []string {
+	var bcLinks []string
+
+	fd, err := os.Open(progDir + "bc_links.txt")
+	defer fd.Close()
+	if err != nil {
+		return bcLinks
+	}
+
+	input := bufio.NewScanner(fd)
+	for input.Scan() {
+		link := strings.Split(input.Text(), "\t")[0]
+		bcLinks = append(bcLinks, link)
+	}
+	sort.Strings(bcLinks)
+
+	return bcLinks
+}
+
 func strExists(s []string, el string) bool {
 	i := sort.SearchStrings(s, el)
 	if i >= len(s) {
@@ -232,7 +272,10 @@ func urlExists(hn *hnResults, url string) (bool, int) {
 		return string(hn.urls[i].url) >= url
 	})
 
-	if hn.urls[idx].url == url {
+	hnUrl := strings.TrimSuffix(hn.urls[idx].url, "/")
+	url = strings.TrimSuffix(url, "/")
+
+	if hnUrl == url {
 		return true, idx
 	} else {
 		return false, 0
@@ -465,10 +508,10 @@ func filterHn(hn *hnResults, client *http.Client, now time.Time,
 
 		go func(id int) {
 			story := getStory(id, client, now)
-			mu.Lock()
+			MU.Lock()
 			classifyStory(story,
 				blockedDomains, blockedKeywords, hn)
-			mu.Unlock()
+			MU.Unlock()
 			wg.Done()
 		}(id)
 	}
@@ -581,6 +624,18 @@ func logLrsStories(lrsStories []lrsStory, progDir string) {
 	}
 }
 
+func logBcArticles(bc map[string][]article, progDir string) {
+	fdOpts := os.O_CREATE | os.O_APPEND | os.O_WRONLY
+
+	fd, err := os.OpenFile(progDir+"bc_links.txt", fdOpts, 0644)
+	errExit(err, "error: cannot create file")
+	defer fd.Close()
+
+	for link, _ := range bc {
+		fmt.Fprintln(fd, link)
+	}
+}
+
 func logHnLine(story hnStory) string {
 	return fmt.Sprintf("%s\t"+
 		"%2.2d:%2.2d\t"+
@@ -615,8 +670,125 @@ func logLrsLine(story lrsStory) string {
 	)
 }
 
-func prepareHtml(hn *hnResults, lrsStories *[]lrsStory, progDir string,
-	now time.Time) {
+func getBadCyberLinks(client *http.Client, progDir string) map[string][]article {
+	bc := make(map[string][]article)
+
+	catchUpLinks := getCatchUpLinks(client, progDir)
+	for _, link := range catchUpLinks {
+		title, articles := getCatchUpArticles(link, client)
+		bc[link+"\t"+title] = articles
+	}
+
+	return bc
+}
+
+func getCatchUpLinks(client *http.Client, progDir string) []string {
+	var catchUpLinks []string
+
+	url := "https://badcyber.com/feed/"
+	if PL {
+		url = "https://zaufanatrzeciastrona.pl/feed/"
+	}
+
+	req, err := http.NewRequest("GET", url, nil)
+	errExit(err, "error: cannot prepare a request")
+	req.Close = true
+	resp, err := client.Do(req)
+	errExit(err, "error: cannot make a request")
+
+	body, err := ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
+
+	bcLinks := readBcLinks(progDir)
+
+	lines := strings.Split(string(body), "\n")
+	for _, line := range lines {
+		link := getCatchUpLink(line)
+		if link != "" && !strExists(bcLinks, link) {
+			catchUpLinks = append(catchUpLinks, link)
+		}
+	}
+
+	return catchUpLinks
+}
+
+func getCatchUpArticles(url string, client *http.Client) (string, []article) {
+	var articles []article
+
+	req, err := http.NewRequest("GET", url, nil)
+	errExit(err, "error: cannot prepare a request")
+	req.Close = true
+	resp, err := client.Do(req)
+	errExit(err, "error: cannot make a request")
+
+	body, err := ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
+
+	title, rawArticles := getRawArticles(string(body))
+	for _, rawA := range rawArticles {
+		if !strings.Contains(rawA, ">") ||
+			!strings.Contains(rawA, "http") {
+
+			continue
+		}
+
+		var a article
+		rawA = strings.Replace(rawA, "<strong>", "", -1)
+		rawA = strings.Replace(rawA, "</strong>", "", -1)
+		split := strings.Split(rawA, ">")
+		a.url = strings.Split(split[0], "\" ")[0]
+		a.title = strings.Split(split[1], "</a")[0]
+		articles = append(articles, a)
+	}
+
+	return title, articles
+}
+
+func getRawArticles(htmlBody string) (string, []string) {
+	var title string
+	var rawArticles []string
+
+	lines := strings.Split(htmlBody, "\n")
+	for _, line := range lines {
+		if strings.Contains(line, "<h1 class=\"entry-title\">") ||
+			strings.Contains(line, "<h1>") {
+
+			title = strings.Split(line, ">")[1]
+			title = strings.Split(title, "<")[0]
+		}
+
+		if strings.HasPrefix(line, "<ol><li>") {
+			split := strings.Split(line, "href=\"")
+			for _, item := range split {
+				rawArticles = append(rawArticles, item)
+			}
+		}
+	}
+
+	if len(rawArticles) == 0 {
+		errExit(errors.New(""), "cound't get badcyber.com articles")
+	}
+
+	return title, rawArticles
+}
+
+func getCatchUpLink(s string) string {
+	var link string
+	keyWord := "it-security-weekend-catch-up"
+	if PL {
+		keyWord = "weekendowa-lektura-odcinek"
+	}
+
+	if strings.Contains(s, "<link>") && strings.Contains(s, keyWord) {
+		link = strings.Split(s, "<link>")[1]
+		link = strings.Split(link, "</link>")[0]
+	}
+
+	return link
+}
+
+func prepareHtml(hn *hnResults, lrsStories *[]lrsStory,
+	bc *map[string][]article, progDir string, now time.Time) {
 
 	dt := fmt.Sprintf("%d-%.2d-%.2d_%.2d%.2d",
 		now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
@@ -629,17 +801,52 @@ func prepareHtml(hn *hnResults, lrsStories *[]lrsStory, progDir string,
 
 	fmt.Fprintln(fd, htmlHeader)
 
-	fmt.Fprintln(fd, "* Hacker News\n")
+	if len(hn.mainStories) > 0 {
+		fmt.Fprintln(fd, "* hacker news\n")
+	}
+
 	for _, story := range hn.mainStories {
 		printHnStory(fd, story)
 	}
 
-	fmt.Fprintln(fd, "\n* lobste.rs\n")
+	if len(*lrsStories) > 0 {
+		fmt.Fprintln(fd, "\n* lobste.rs\n")
+	}
 	for _, story := range *lrsStories {
 		printLrsStory(fd, story, hn)
 	}
 
+	if len(*bc) > 0 {
+		fmt.Fprintln(fd, "\n* badcyber.com\n")
+	}
+	for link, articles := range *bc {
+		linkSplit := strings.Split(link, "\t")
+		link, title := linkSplit[0], linkSplit[1]
+		header := fmt.Sprintf("%s (<a href='%s'>link</a>)\n",
+			title, link)
+		fmt.Fprintln(fd, header)
+		for i, a := range articles {
+			newLine := "\n"
+			if i < len(articles)-1 && isPrevArticle(articles[i+1]) {
+				newLine = ", "
+			}
+			printBcArticle(fd, a, hn, newLine)
+		}
+		fmt.Fprintln(fd, "\n")
+	}
+
 	fmt.Fprintln(fd, htmlFooter)
+}
+
+func isPrevArticle(a article) bool {
+	t := a.title
+	switch {
+	case strings.Contains(t, "PDF") && len(t) <= 8:
+		return true
+	case strings.HasPrefix(t, "[") && strings.HasSuffix(t, "]"):
+		return true
+	}
+	return false
 }
 
 func printHnStory(fd *os.File, story hnStory) {
@@ -688,6 +895,21 @@ func printLrsStory(fd *os.File, story lrsStory, hn *hnResults) {
 	)
 
 	fmt.Fprintln(fd, printString)
+}
+
+func printBcArticle(fd *os.File, a article, hn *hnResults, newLine string) {
+	hnItemUrl := "https://news.ycombinator.com/item?id="
+	hnLink := "-"
+
+	hnExists, idx := urlExists(hn, a.url)
+	if hnExists {
+		hnUrl := hnItemUrl + strconv.Itoa(hn.urls[idx].id)
+		hnLink = fmt.Sprintf("<a href='%s'>hn</a>", hnUrl)
+	}
+	printString := fmt.Sprintf("<a href='%s'>%s</a> (%s)",
+		a.url, a.title, hnLink)
+
+	fmt.Fprintf(fd, "%s%s", printString, newLine)
 }
 
 func clearTmp(progDir string) {
