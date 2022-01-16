@@ -65,5 +65,7 @@ notes
 todo
 ====
 
-on http error skip processing
-calculate avg 'commenters/new stories' or 'comments/new stories' ratio per hour
+- on http error skip processing
+- add option to show blocked pages sorted by popularity and with a reason for a
+block (what url + what keyword)
+- calculate avg 'commenters/new stories' or 'comments/new stories' ratio per hour

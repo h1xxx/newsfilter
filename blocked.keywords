@@ -1,32 +1,46 @@
  City
  FB 
+ Gas 
+ Heat	!heatmap	!Heatmap
  YC
  city
+ gas 
+ heat	!heatmap	!Heatmap
 (YC
 .NET
+.js
+737 Max
+AI
 AMP
 AWS
 Accident
 Account
 Accounting
 Acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+Activision
 Addict
 Africa
+Ageism
 Agile
 Airbnb
+Airbus
 Alcohol
 Allege
 Amazon
 America
+Ancient
 Android
 Animat
+Antarctic
 App Store
 App store
 Apple
 Apply
+Arctic
 Assange
 Astronom
 Autonomous
+Aviation
 Bank
 Battery
 Bay Area
@@ -34,7 +48,9 @@ Big Tech
 Bike
 Billing
 Biontech
+Blizzard
 Blockchain
+Boeing
 Boeing
 Boss
 Brave
@@ -48,12 +64,15 @@ California
 Capital
 Carbon
 Career
+Charg
 Chess
+Child
 Chrome
 Chromium
 Cities
 Climate
 Clinical
+CoV-2
 Coffee
 Colorado
 Committee
@@ -66,9 +85,11 @@ Construct
 Consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Contract
 Copilot
+Corona
 Coronavirus
 County
 County
+Course
 Court
 Covid
 Culture
@@ -83,27 +104,31 @@ Deno
 Depart
 Desert
 Discord
+Discover
 Disney
 Dollar
 Drug
 Econom
 Edge
 Education
-Electricity
+Electric
 Elizabeth Holmes
 Elon Musk
 Emoji
 Employ
 Energy
 Engineer	!reverse	!Reverse
+Evidence
 Experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Facebook
+Federal
 Finance
 Financial
 Fintech
 Fired
 Firefox
 Fires
+First Time
 Flask
 Flight
 Food
@@ -112,10 +137,12 @@ Founder
 Fund 
 Funding
 Funds
+Fung
 Google Anal
 Google Pixel
 Google Play
 Government
+Graduat
 Has Died
 Has died
 Health
@@ -124,28 +151,40 @@ High school
 Hire
 Hiring
 Hong Kong
+Hospital
 Hours
 House
 Housing
 Hundred
 Husband
+IKEA
 IPO
+Ikea
+Immunity
+Industry
+Inflation
 Infring
 Instagram
+Intelligence
 Introvert
 Invent
+Invest
 Investigat
+Island
 James Webb
 JavaScript
 Javascript
 Jeff Bezos
 Job
+John Deere
 Journalist
 Judge
 Judic
 Kids
 Laser
 Launch HN
+Lawsuit
+Lens
 Living
 Los Angeles
 M1
@@ -155,13 +194,21 @@ MacBook
 Macintosh
 Manufactur
 Market
+Medicine
+Metaverse
 Michigan
 Microsoft
+Military
+Milk
+Misinformation
+Monetiz
 Motorcycle
 Mozilla
 Mushrooms
+NASA
 NFT
 NPM
+Navigation
 Navy
 New York
 New York
@@ -171,22 +218,29 @@ Node.js
 Non-tech
 Notice
 Nuclear
+Ocean	!Digital
 Omicron
+OnlyFans
 PHP
+Pandemic
 Parental
 Parents
+Parking
 Patent
 Patient
 Payment
+Pentagon
 Peter Thiel
 Pfizer
 Phone
 Physicist
+Pixar
 Pixel 10
 Pixel 6
 Pixel 7
 Pixel 8
 Pixel 9
+Plane
 Plant
 Plastic
 Politic
@@ -197,21 +251,28 @@ Price
 Prosecute
 Protein
 RNA
+Radiation
 Recipe
 Remote Work
 Remote work
+Research
 Retina
 Right To
 Right to
+Robot
 Robots 
+Rocket
 Rust
+SARS
 SaaS
 Safari
 Salar
 San Francisco
 San Francisco
-Scien	!comput	!Comput
+School
+Scien
 Scrum
+Self-Driving
 Senior
 Series A
 Series B
@@ -235,6 +296,7 @@ Solar
 Space Station
 SpaceX
 Species
+Starlink
 Startup
 Steve Jobs
 Stripe
@@ -242,6 +304,9 @@ Student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Study Finds
 Study finds
 Success
+Suggest
+Supreme Court
+Surveillance
 Tax
 Teams
 Teen
@@ -263,6 +328,8 @@ VS Code
 Vaccina
 Vaccine
 Valuation
+Variant
+Vehicle
 Violating
 Visual Studio
 WASM
@@ -270,12 +337,15 @@ WSL
 Wall Street
 Wasm
 Water
+Web 3.0
 Web App
 Web Dev
 Web3
 WebAssembly
 WebGL
 Webb Space
+WhatsApp
+Whistleblower
 Wife
 Windows
 Wood
@@ -285,6 +355,7 @@ Work week
 Work-week
 Workweek
 World Cup
+Xi Jinping
 Y Combinator
 YC's
 YC’s
@@ -296,13 +367,16 @@ accounting
 acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 acquires
 addict
+ageism
 alcohol
 allege
+ancient
 animat
 app store
 apply
 astronom
 autonomous
+aviation
 battery
 big tech
 bike
@@ -315,7 +389,9 @@ caffeine
 capital
 carbon
 career
+charg
 chess
+child
 cities
 climate
 clinical
@@ -329,7 +405,9 @@ constitution
 construct
 consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 contract
+corona
 county
+course
 court
 covid
 culture
@@ -341,21 +419,25 @@ deadly
 demand
 depart
 desert
+discover
 dollar
 drug
 econom
 education
-electricity
+electric
 emoji
 employ
 energy
 engineer	!reverse	!Reverse
+evidence
 experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+federal
 finance
 financial
 fintech
 fired
 fires
+first time
 flight
 food
 fossil
@@ -363,12 +445,15 @@ founder
 fund 
 funding
 funds
+fung
 government
+graduat
 has died
 health
 high school
 hire
 hiring
+hospital
 hours
 house
 housing
@@ -376,34 +461,53 @@ hundred
 husband
 iOS
 iPhone
+immunity
 income
+industry
+inflation
 infring
+intelligence
 introvert
 invent
+invest
 investigat
+island
 job	!syntax	!Syntax	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 journalist
 judge
 judic
 kids
 laser
+lawsuit
+lens
 living
 macOS
 manufactur
 market
+medicine
+metaverse
+military
+milk
+misinformation
+monetiz
 motorcycle
 mushrooms
+navigation
 non-tech
 notice
 npm
 nuclear
+ocean
+pandemic
 parental
 parents
+parking
 patent
 patient
 payment
 phone
 physicist
+plane
 plant
 plastic
 politic
@@ -413,13 +517,19 @@ price
 prices
 prosecute
 protein
+radiation
 recipe
 remote work
+research
 retina
 right to
+robot
 robots 
+rocket
 salar
-scien	!comput	!Comput
+school
+scien
+self-driving
 senior
 series A
 series B
@@ -441,6 +551,9 @@ startup
 student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 study finds
 success
+suggest
+supreme court
+surveillance
 tax	!syntax	!Syntax	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 teams
 teen
@@ -450,11 +563,15 @@ treat
 vaccina
 vaccine
 valuation	!evaluation
+variant
+vehicle
 violating
 water
+web 3.0
 web app
 web dev
 web3
+whistleblower
 wife
 wood
 work week
