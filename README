@@ -2,8 +2,8 @@
 newsfilter
 ==========
 
-A small program to fetch articles from Hacker News and lobste.rs and extract
-only technical ones with use of blacklisted domains and keywords.
+A small program to fetch articles from Hacker News, lobste.rs and badcyber.com
+and then extract only technical ones with use of blacklisted domains and keywords.
 
 Prepares an html file with a list of articles that can be read from any www
 browser.
@@ -19,17 +19,23 @@ Topics permanently blocked by default:
 - career, interviewing, money etc.
 - so called modern web (large browsers, JavaScript, Node.js etc.)
 - non-free platforms (Windows, Apple)
+- Emacs (I really tried to like it, lol)
+- GUI, graphics
+- audio processing
 - smartphones.
 
 Topics filtered temporarily:
 - Rust - until the language becomes more settled.
 
+Only Hacker News stories are filtered, as other sources modarate their content
+heavily.
 
 
 
 dependencies
 ============
 
+- make
 - go
 
 

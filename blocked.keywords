@@ -6,6 +6,24 @@
  city
  gas 
  heat	!heatmap	!Heatmap
+(180
+(181
+(182
+(183
+(184
+(185
+(186
+(187
+(188
+(189
+(190
+(191
+(192
+(193
+(194
+(195
+(196
+(197
 (YC
 .NET
 .js
@@ -13,29 +31,39 @@
 AI
 AMP
 AWS
+Academi
 Accident
 Account
 Accounting
 Acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Activision
 Addict
+Advent Of Code
+Advent of Code
+Africa
 Africa
 Ageism
 Agile
 Airbnb
 Airbus
+Albania
 Alcohol
 Allege
+Alzheimer
 Amazon
 America
 Ancient
 Android
+Angular
 Animat
 Antarctic
+Antitrust
 App Store
 App store
 Apple
 Apply
+Archaeo
+Archeo
 Arctic
 Assange
 Astronom
@@ -48,6 +76,7 @@ Big Tech
 Bike
 Billing
 Biontech
+Blender
 Blizzard
 Blockchain
 Boeing
@@ -58,15 +87,24 @@ Browser Ext
 Browser ext
 Business
 CEO
+CIA
+CO2
+COVID
 CSS
 Caffeine
+Calendar
 California
+Campaign
+Cancer
+Cannabis
 Capital
 Carbon
 Career
+Cars
 Charg
 Chess
 Child
+China
 Chrome
 Chromium
 Cities
@@ -74,6 +112,8 @@ Climate
 Clinical
 CoV-2
 Coffee
+Cognitive
+Color
 Colorado
 Committee
 Companies
@@ -82,6 +122,7 @@ Compete
 Congress
 Constitution
 Construct
+Consulta
 Consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Contract
 Copilot
@@ -92,6 +133,8 @@ County
 Course
 Court
 Covid
+Credit Card
+Credit card
 Culture
 Currency
 Customer
@@ -100,27 +143,35 @@ DNA
 Deadliest
 Deadly
 Demand
+Dementia
 Deno
 Depart
+Depress
 Desert
+Dimension
 Discord
-Discover
+Disease
 Disney
 Dollar
 Drug
 Econom
 Edge
 Education
+Egypt
 Electric
 Elizabeth Holmes
 Elon Musk
+Emacs
 Emoji
 Employ
 Energy
 Engineer	!reverse	!Reverse
+Equation
 Evidence
 Experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+FDA
 Facebook
+Family
 Federal
 Finance
 Financial
@@ -134,10 +185,13 @@ Flight
 Food
 Fossil
 Founder
+Frat
+Fruit
 Fund 
 Funding
 Funds
 Fung
+Gold
 Google Anal
 Google Pixel
 Google Play
@@ -155,12 +209,16 @@ Hospital
 Hours
 House
 Housing
+Human
 Hundred
 Husband
 IKEA
 IPO
+IRS
 Ikea
 Immunity
+Impairment
+India
 Industry
 Inflation
 Infring
@@ -170,8 +228,11 @@ Introvert
 Invent
 Invest
 Investigat
+Iran
+Iraq
 Island
 James Webb
+Japan
 JavaScript
 Javascript
 Jeff Bezos
@@ -192,16 +253,21 @@ Mac
 Mac OS
 MacBook
 Macintosh
+Maestro
 Manufactur
 Market
+MasterCard
+Math
 Medicine
 Metaverse
 Michigan
 Microsoft
 Military
 Milk
+Minecraft
 Misinformation
 Monetiz
+Money
 Motorcycle
 Mozilla
 Mushrooms
@@ -213,14 +279,19 @@ Navy
 New York
 New York
 NextJS
+NextJS
+Nigeria
 Nobel
 Node.js
 Non-tech
 Notice
 Nuclear
 Ocean	!Digital
+Office
+Olymp
 Omicron
 OnlyFans
+Oxygen
 PHP
 Pandemic
 Parental
@@ -243,18 +314,25 @@ Pixel 9
 Plane
 Plant
 Plastic
+Police
 Politic
+Pollut
 Pompeii
 Population
 Position
 Price
+Productivity
+Propaganda
 Prosecute
 Protein
 RNA
 Radiation
+React
 Recipe
 Remote Work
 Remote work
+Render
+Renewable
 Research
 Retina
 Right To
@@ -296,6 +374,7 @@ Solar
 Space Station
 SpaceX
 Species
+Sphere
 Starlink
 Startup
 Steve Jobs
@@ -303,17 +382,24 @@ Stripe
 Student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Study Finds
 Study finds
+Subscri
 Success
 Suggest
 Supreme Court
 Surveillance
+Synth	!speech	!Speech
 Tax
+Teach
 Teams
 Teen
 Telescope
 Tesla
+Theft
+Therapy
 TikTok
 Tim Cook
+Trains
+Transport
 Travel
 Treat
 Twitch
@@ -323,14 +409,19 @@ Typescript
 UI	!TUI	!UUID	!Unix	!terminal	!Terminal	!UNIX	!Linux	!server	!Server
 UX
 Uber
+Uganda
+Union
 University
 VS Code
 Vaccina
 Vaccine
 Valuation
 Variant
+Vegetable
 Vehicle
 Violating
+Visa
+Visual
 Visual Studio
 WASM
 WSL
@@ -344,10 +435,12 @@ Web3
 WebAssembly
 WebGL
 Webb Space
+Webview
 WhatsApp
 Whistleblower
 Wife
 Windows
+Women
 Wood
 WordPress
 Wordpress
@@ -360,7 +453,10 @@ Y Combinator
 YC's
 YC’s
 York City
+Young
+Zealand
 Zuckerberg
+academi
 accident
 account
 accounting
@@ -372,8 +468,11 @@ alcohol
 allege
 ancient
 animat
+antitrust
 app store
 apply
+archaeo
+archeo
 astronom
 autonomous
 aviation
@@ -386,9 +485,14 @@ boss
 browser ext
 business
 caffeine
+calendar
+campaign
+cancer
+cannabis
 capital
 carbon
 career
+cars	!side	!Side
 charg
 chess
 child
@@ -396,6 +500,8 @@ cities
 climate
 clinical
 coffee
+cognitive
+color
 committee
 companies
 company
@@ -403,6 +509,7 @@ compete
 congress
 constitution
 construct
+consulta
 consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 contract
 corona
@@ -410,6 +517,7 @@ county
 course
 court
 covid
+credit card
 culture
 currency
 customer
@@ -417,9 +525,12 @@ cycl
 deadliest
 deadly
 demand
+dementia
 depart
+depress
 desert
-discover
+dimension
+disease
 dollar
 drug
 econom
@@ -429,8 +540,10 @@ emoji
 employ
 energy
 engineer	!reverse	!Reverse
+equation
 evidence
 experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+family
 federal
 finance
 financial
@@ -442,10 +555,13 @@ flight
 food
 fossil
 founder
+frat
+fruit	!Ada
 fund 
 funding
 funds
 fung
+gold
 government
 graduat
 has died
@@ -457,11 +573,14 @@ hospital
 hours
 house
 housing
+human
 hundred
 husband
+iCloud
 iOS
 iPhone
 immunity
+impairment
 income
 industry
 inflation
@@ -484,12 +603,14 @@ living
 macOS
 manufactur
 market
+math
 medicine
 metaverse
 military
 milk
 misinformation
 monetiz
+money
 motorcycle
 mushrooms
 navigation
@@ -498,6 +619,9 @@ notice
 npm
 nuclear
 ocean
+office
+olymp
+oxygen
 pandemic
 parental
 parents
@@ -510,22 +634,29 @@ physicist
 plane
 plant
 plastic
+police
 politic
+pollut
 population
 position
 price
 prices
+productivity
+propaganda
 prosecute
 protein
 radiation
 recipe
 remote work
+render
+renewable
 research
 retina
 right to
 robot
 robots 
 rocket
+résumé
 salar
 school
 scien
@@ -547,25 +678,37 @@ social media
 software engineer
 solar
 species
+sphere
 startup
 student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 study finds
+subscri
 success
 suggest
 supreme court
 surveillance
+synth	!speech	!Speech
 tax	!syntax	!Syntax	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+teach
 teams
 teen
 telescope
+theft
+therapy
+trains
+transport
 travel
 treat
+union
 vaccina
 vaccine
 valuation	!evaluation
 variant
+vegetable
 vehicle
 violating
+visa
+visual
 water
 web 3.0
 web app
@@ -573,7 +716,9 @@ web dev
 web3
 whistleblower
 wife
+women
 wood
 work week
 work-week
 workweek
+young
