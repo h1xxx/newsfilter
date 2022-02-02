@@ -1,8 +1,10 @@
+ Bubble	!sort	!Sort
  City
  FB 
  Gas 
  Heat	!heatmap	!Heatmap
  YC
+ bubble	!sort	!Sort
  city
  gas 
  heat	!heatmap	!Heatmap
@@ -44,6 +46,7 @@ Africa
 Africa
 Ageism
 Agile
+AirPod
 Airbnb
 Airbus
 Albania
@@ -69,7 +72,9 @@ Assange
 Astronom
 Autonomous
 Aviation
+B deal
 Bank
+Banking
 Battery
 Bay Area
 Big Tech
@@ -82,6 +87,7 @@ Blockchain
 Boeing
 Boeing
 Boss
+Brain
 Brave
 Browser Ext
 Browser ext
@@ -105,6 +111,7 @@ Charg
 Chess
 Child
 China
+Christmas
 Chrome
 Chromium
 Cities
@@ -113,6 +120,7 @@ Clinical
 CoV-2
 Coffee
 Cognitive
+Collabor
 Color
 Colorado
 Committee
@@ -123,8 +131,9 @@ Congress
 Constitution
 Construct
 Consulta
-Consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+Consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 Contract
+Cooking
 Copilot
 Corona
 Coronavirus
@@ -150,10 +159,15 @@ Depress
 Desert
 Dimension
 Discord
+Discriminat
 Disease
 Disney
 Dollar
+Drag And Drop
+Drag and Drop
+Drone
 Drug
+Eating	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!beat	!Beat	!repeat	!Repeat	!cheat	!Cheat	!defeat	!Defeat	!creat	!Creat	!treat	!Treat
 Econom
 Edge
 Education
@@ -163,12 +177,13 @@ Elizabeth Holmes
 Elon Musk
 Emacs
 Emoji
+Empire
 Employ
 Energy
 Engineer	!reverse	!Reverse
 Equation
 Evidence
-Experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+Experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 FDA
 Facebook
 Family
@@ -180,6 +195,7 @@ Fired
 Firefox
 Fires
 First Time
+Fiscal
 Flask
 Flight
 Food
@@ -191,12 +207,15 @@ Fund
 Funding
 Funds
 Fung
+GDPR
+Geek
 Gold
 Google Anal
 Google Pixel
 Google Play
 Government
 Graduat
+Guilty
 Has Died
 Has died
 Health
@@ -212,6 +231,7 @@ Housing
 Human
 Hundred
 Husband
+Hydro
 IKEA
 IPO
 IRS
@@ -243,11 +263,13 @@ Judge
 Judic
 Kids
 Laser
+Latin 
 Launch HN
 Lawsuit
 Lens
 Living
 Los Angeles
+M deal
 M1
 Mac 
 Mac OS
@@ -258,14 +280,20 @@ Manufactur
 Market
 MasterCard
 Math
+Measure
 Medicine
 Metaverse
 Michigan
+Microservice
 Microsoft
+Middle Age
+Middle age
 Military
 Milk
 Minecraft
 Misinformation
+Mobile App
+Mobile app
 Monetiz
 Money
 Motorcycle
@@ -276,6 +304,7 @@ NFT
 NPM
 Navigation
 Navy
+Nazi
 New York
 New York
 NextJS
@@ -284,8 +313,12 @@ Nigeria
 Nobel
 Node.js
 Non-tech
+Note Tak
+Note tak
+Notes
 Notice
 Nuclear
+Obsess
 Ocean	!Digital
 Office
 Olymp
@@ -293,6 +326,7 @@ Omicron
 OnlyFans
 Oxygen
 PHP
+Paid
 Pandemic
 Parental
 Parents
@@ -300,17 +334,15 @@ Parking
 Patent
 Patient
 Payment
+Penalty
 Pentagon
 Peter Thiel
 Pfizer
 Phone
 Physicist
+Pittsburgh
 Pixar
-Pixel 10
-Pixel 6
-Pixel 7
-Pixel 8
-Pixel 9
+Pixel
 Plane
 Plant
 Plastic
@@ -325,7 +357,9 @@ Productivity
 Propaganda
 Prosecute
 Protein
+Quit	!quite	!Quite
 RNA
+Racist
 Radiation
 React
 Recipe
@@ -340,6 +374,7 @@ Right to
 Robot
 Robots 
 Rocket
+Roman
 Rust
 SARS
 SaaS
@@ -359,15 +394,20 @@ Series D
 Series E
 Series F
 Series G
+Server-less
+Serverless
 Ship	!censor	!Censor	!owner	!Owner	!source	!Source	!code	!Code
 Shortage
 Side Project
 Side project
 Silicon Valley
+Silo	!epsilon	!Epsilon
 Skill
 Skyscraper
+Social
 Social Media
 Social media
+Soda
 Software Engineer
 Software engineer
 Solar
@@ -379,7 +419,7 @@ Starlink
 Startup
 Steve Jobs
 Stripe
-Student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+Student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 Study Finds
 Study finds
 Subscri
@@ -387,7 +427,11 @@ Success
 Suggest
 Supreme Court
 Surveillance
+Sweden
 Synth	!speech	!Speech
+Taiwan
+Take Note
+Take note
 Tax
 Teach
 Teams
@@ -398,18 +442,21 @@ Theft
 Therapy
 TikTok
 Tim Cook
+Toxic
 Trains
 Transport
 Travel
 Treat
+Tweet
 Twitch
 Twitter
 TypeScript
 Typescript
-UI	!TUI	!UUID	!Unix	!terminal	!Terminal	!UNIX	!Linux	!server	!Server
+UI	!TUI	!UUID	!Unix	!terminal	!Terminal	!UNIX	!Linux	!server	!Server	!memory	!Memory	!CPU	!cpu
 UX
 Uber
 Uganda
+Ukraine
 Union
 University
 VS Code
@@ -431,6 +478,10 @@ Water
 Web 3.0
 Web App
 Web Dev
+Web Font
+Web Framework
+Web font
+Web framework
 Web3
 WebAssembly
 WebGL
@@ -443,9 +494,11 @@ Windows
 Women
 Wood
 WordPress
+Wordle
 Wordpress
 Work week
 Work-week
+Workplace
 Workweek
 World Cup
 Xi Jinping
@@ -476,12 +529,14 @@ archeo
 astronom
 autonomous
 aviation
+banking
 battery
 big tech
 bike
 billing
 blockchain
 boss
+brain
 browser ext
 business
 caffeine
@@ -501,6 +556,7 @@ climate
 clinical
 coffee
 cognitive
+collabor
 color
 committee
 companies
@@ -510,8 +566,9 @@ congress
 constitution
 construct
 consulta
-consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
+consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 contract
+cooking
 corona
 county
 course
@@ -530,13 +587,18 @@ depart
 depress
 desert
 dimension
+discriminat
 disease
 dollar
+drag and drop
+drone
 drug
+eating	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!beat	!Beat	!repeat	!Repeat	!cheat	!Cheat	!defeat	!Defeat	!creat	!Creat	!treat	!Treat
 econom
 education
 electric
 emoji
+empire
 employ
 energy
 engineer	!reverse	!Reverse
@@ -551,6 +613,7 @@ fintech
 fired
 fires
 first time
+fiscal
 flight
 food
 fossil
@@ -561,9 +624,11 @@ fund
 funding
 funds
 fung
+geek
 gold
 government
 graduat
+guilty
 has died
 health
 high school
@@ -576,6 +641,7 @@ housing
 human
 hundred
 husband
+hydro
 iCloud
 iOS
 iPhone
@@ -597,6 +663,7 @@ judge
 judic
 kids
 laser
+latin 
 lawsuit
 lens
 living
@@ -604,24 +671,34 @@ macOS
 manufactur
 market
 math
+measure
 medicine
 metaverse
+microservice
+middle age
 military
 milk
 misinformation
+mobile app
 monetiz
 money
 motorcycle
 mushrooms
 navigation
+nazi
 non-tech
+note Tak
+note tak
+notes
 notice
 npm
 nuclear
+obsess
 ocean
 office
 olymp
 oxygen
+paid
 pandemic
 parental
 parents
@@ -629,8 +706,10 @@ parking
 patent
 patient
 payment
+penalty
 phone
 physicist
+pixel
 plane
 plant
 plastic
@@ -645,6 +724,8 @@ productivity
 propaganda
 prosecute
 protein
+quit	!quite	!Quite	!ubiquit	!Ubiquit
+racist
 radiation
 recipe
 remote work
@@ -656,6 +737,7 @@ right to
 robot
 robots 
 rocket
+roman
 résumé
 salar
 school
@@ -669,12 +751,17 @@ series D
 series E
 series F
 series G
+server-less
+serverless
 ship	!censor	!Censor	!owner	!Owner	!source	!Source	!code	!Code
 shortage
 side project
+silo	!epsilon	!Epsilon
 skill
 skyscraper
+social
 social media
+soda
 software engineer
 solar
 species
@@ -688,6 +775,8 @@ suggest
 supreme court
 surveillance
 synth	!speech	!Speech
+take Note
+take note
 tax	!syntax	!Syntax	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 teach
 teams
@@ -695,10 +784,12 @@ teen
 telescope
 theft
 therapy
+toxic
 trains
 transport
 travel
 treat
+tweet
 union
 vaccina
 vaccine
@@ -713,6 +804,8 @@ water
 web 3.0
 web app
 web dev
+web font
+web framework
 web3
 whistleblower
 wife
@@ -720,5 +813,6 @@ women
 wood
 work week
 work-week
+workplace
 workweek
 young

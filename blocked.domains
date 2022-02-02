@@ -57,6 +57,7 @@
 *.springer.com
 *.stanford.edu
 *.stlouisfed.org
+*.stv.tv
 *.substack.com
 *.telegram.org
 *.treasury.gov
@@ -94,11 +95,13 @@ aeon.co
 agriculture.com
 airbnb.com
 aljazeera.com
+allrgb.com
 allthatsinteresting.com
 amazon.com
 americanaffairsjournal.org
 americanrhetoric.com
 aninjusticemag.com
+antigonejournal.com
 antipope.org
 aom.org
 aopa.org
@@ -109,6 +112,7 @@ appleinsider.com
 ar.al
 archaeologynewsnetwork.blogspot.com
 archives.gov
+arhamjain.com
 arxiv.org
 asm.org
 astro.build
@@ -123,6 +127,7 @@ balkaninsight.com
 bbc.co.uk
 bbc.com
 bellmar.medium.com
+benkuhn.net
 benwajdi.com
 bigthink.com
 biomedcentral.com
@@ -131,6 +136,7 @@ bitchute.com
 bleepingcomputer.com
 blockcrunch.co
 blog.usejournal.com
+blogicarian.blogspot.com
 blogs.msdn.com
 blogs.msdn.microsoft.com
 blogs.wsj.com
@@ -140,6 +146,7 @@ bls.gov
 bmj.com
 bnnbloomberg.ca
 boingboing.net
+bookandsword.com
 bostonglobe.com
 bostonmagazine.com
 bps.org.uk
@@ -152,6 +159,7 @@ businessinsider.com
 businessweek.com
 butwhatfor.com
 buzzfeednews.com
+byteofdev.com
 calcalistech.com
 cam.ac.uk
 cambridge.org
@@ -165,6 +173,7 @@ cdc.gov
 cell.com
 cftc.gov
 chalkdustmagazine.com
+chemistryworld.com
 chess.com
 chessbase.com
 chicagomag.com
@@ -179,6 +188,7 @@ colorado.gov
 comicbook.com
 commoncog.com
 compoundadvisors.com
+consilienceproject.org
 converged.yt
 cornell.edu
 cpj.org
@@ -196,6 +206,7 @@ daringfireball.net
 deadline.com
 deccanherald.com
 declassifieduk.org
+defensenews.com
 deno.com
 deprocrastination.co
 destevez.net
@@ -220,6 +231,7 @@ edge.org
 edition.cnn.com
 eduardosasso.co
 effectivealtruism.org
+eleanorkonik.com
 en.wikipedia.org
 engadget.com
 epsilontheory.com
@@ -230,24 +242,29 @@ eukaryotewritesblog.com
 euobserver.com
 eurasianet.org
 euronews.com
+evertpot.com
 everydayastronaut.com
+expmag.com
 extremetech.com
 facebook.com
 fastcompany.com
 fastly.com
 fb.com
 fcc.gov
+federalreserve.gov
 ffii.org
 fieldandstream.com
 fiercebiotech.com
 finance.yahoo.com
 firstthings.com
+foodscienceinstitute.com
 forbes.com
 foreignpolicy.com
 formula1.com
 fortune.com
 foundationdb.org
 freightwaves.com
+fs.blog
 fstoppers.com
 ft.com
 ftc.gov
@@ -261,6 +278,7 @@ gizmodo.com
 glineq.blogspot.com
 goodnewsnetwork.org
 google.com
+gordongoner.com
 granolashotgun.com
 granta.com
 greenspun.com
@@ -274,6 +292,7 @@ historytoday.com
 hothardware.com
 house.gov
 howtomarketagame.com
+hyper-resolution.org
 ianstormtaylor.com
 iapp.org
 ij.org
@@ -291,6 +310,7 @@ interactionmagic.com
 interestingengineering.com
 intuitiveexplanations.com
 investors.modernatx.com
+irishtimes.com
 jacquescorbytuech.com
 jacquesmattheij.com
 jalopnik.com
@@ -341,6 +361,7 @@ marginalrevolution.com
 marketwatch.com
 mashable.com
 mattbruenig.com
+matthewstrom.com
 mcgill.ca
 media.uzh.ch
 medievalists.net
@@ -395,8 +416,10 @@ nikkei.com
 ninds.nih.gov
 nltimes.nl
 noaa.gov
+noemamag.com
 nofilmschool.com
 northwestern.edu
+nova.app
 npr.org
 nps.gov
 nrk.no
@@ -408,6 +431,7 @@ nymag.com
 nypost.com
 nytimes.com
 nyu.edu
+oceana.org
 onemileatatime.com
 online.wsj.com
 onlineornot.com
@@ -431,8 +455,10 @@ petapixel.com
 peterattiamd.com
 pewforum.org
 pfizer.com
+philip.design
 photographylife.com
 phys.org
+piszek.com
 planetscale.com
 plausible.io
 plos.org
@@ -460,6 +486,7 @@ pv-tech.org
 quantamagazine.org
 quora.com
 qz.com
+raptitude.com
 rarehistoricalphotos.com
 rbi.org.in
 reactjs.org
@@ -474,6 +501,7 @@ rieck.me
 rijksmuseum.nl
 robinhood.com
 robinsloan.com
+rogerebert.com
 rollingstone.com
 royalsocietypublishing.org
 sagepub.com
@@ -498,15 +526,19 @@ sfchronicle.com
 sfconservancy.org
 sfstandard.com
 sherpareport.com
+shlegeris.com
 shopify.com
 sifted.eu
 sightline.org
+simonhearne.com
 slashfilm.com
 slate.com
+slatestarcodex.com
 slideshare.net
 slowboring.com
 smithsonianmag.com
 soccermatics.medium.com
+solana.com
 southampton.ac.uk
 space.com
 spectrum.ieee.org
@@ -527,9 +559,11 @@ strangeloopcanon.com
 stratechery.com
 stripe.com
 strongtowns.org
+stv.tv
 sublimetext.com
 substack.com
 surfingcomplexity.blog
+surgehq.ai
 swissinfo.ch
 symmetrymagazine.org
 syntorial.com
@@ -556,6 +590,7 @@ thehill.com
 thehustle.co
 theintercept.com
 thelancet.com
+thelocal.com
 themarginalian.org
 themarkup.org
 thenation.com
@@ -568,6 +603,7 @@ thetruthaboutcars.com
 theverge.com
 thewalrus.ca
 theweek.com
+thezbook.com
 time.com
 timharford.com
 tomtunguz.com
@@ -575,6 +611,7 @@ torontolife.com
 towardsdatascience.com
 treasury.gov
 trevorklee.com
+triblive.com
 trtworld.com
 ttnews.com
 tumblr.com
@@ -588,6 +625,7 @@ ucr.edu
 ucsd.edu
 uga.edu
 uibk.ac.at
+uliwestphal.de
 unibas.ch
 unusualwhales.com
 up.com
@@ -602,6 +640,7 @@ vice.com
 vitalik.ca
 vivaldi.com
 vox.com
+warontherocks.com
 washingtonian.com
 washingtonpost.com
 web.app
@@ -617,6 +656,7 @@ wired.com
 withgoogle.com
 worksinprogress.co
 world-nuclear-news.org
+wpr.org
 wptavern.com
 wsj.com
 wuft.org
@@ -628,7 +668,9 @@ youtube.com
 zdnet.com
 zeit.de
 zerohedge.com
+zillow.com
 zimtik.com
 znak.com
 zoom.us
 zotero.org
+zyppy.com
