@@ -75,3 +75,6 @@ todo
 - add option to show blocked pages sorted by popularity and with a reason for a
 block (what url + what keyword)
 - calculate avg 'commenters/new stories' or 'comments/new stories' ratio per hour
+- when searching for hn news skip http and https
+- when searching for hn news return list of all submissions and print all of them
+- when searching for hn news analyze if url parameters should be dropped as well
