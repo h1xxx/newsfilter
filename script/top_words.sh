@@ -4,6 +4,7 @@ export LC_ALL=C
 
 min_len=5
 consecutive_words=1
+res_limit=48
 
 get_words()
 {
@@ -115,7 +116,7 @@ print_words()
 	printf '%s' "${1}" |
 		sort |
 		awk -v min_len="${min_len}" 'length($0)>=min_len' |
-		uniq -c | sort -rn | head -n48
+		uniq -c | sort -rn | head -n ${res_limit}
 }
 
 sort -uo ~/.config/newsfilter/blocked.keywords \
