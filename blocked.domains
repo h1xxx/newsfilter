@@ -10,6 +10,7 @@
 *.brown.edu
 *.bulletin.com
 *.butwhatfor.com
+*.caltech.edu
 *.cdc.gov
 *.chessbase.com
 *.cnn.com
@@ -42,6 +43,7 @@
 *.nyu.edu
 *.oup.com
 *.ox.ac.uk
+*.paulbutler.org
 *.plos.org
 *.princeton.edu
 *.propublica.org
@@ -70,6 +72,7 @@
 *.uscourts.gov
 *.usgs.gov
 *.usps.com
+*.vuejs.org
 *.web.app
 *.whatsapp.com
 *.wiley.com
@@ -113,12 +116,14 @@ ar.al
 archaeologynewsnetwork.blogspot.com
 archives.gov
 arhamjain.com
+arunkprasad.com
 arxiv.org
 asm.org
 astro.build
 atlasobscura.com
 audubon.org
 autoblog.com
+avherald.com
 avweb.com
 aws.amazon.com
 axios.com
@@ -161,6 +166,7 @@ butwhatfor.com
 buzzfeednews.com
 byteofdev.com
 calcalistech.com
+caltech.edu
 cam.ac.uk
 cambridge.org
 carbonswitch.co
@@ -177,6 +183,7 @@ chemistryworld.com
 chess.com
 chessbase.com
 chicagomag.com
+christianheilmann.com
 city-journal.org
 cnbc.com
 cnet.com
@@ -193,6 +200,7 @@ converged.yt
 cornell.edu
 cpj.org
 crystalverse.com
+css-irl.info
 ctvnews.ca
 currentaffairs.org
 cyclingtips.com
@@ -200,6 +208,7 @@ dailycamera.com
 dailydot.com
 damninteresting.com
 danluu.com
+dannyguo.com
 dantepfer.com
 danwang.co
 daringfireball.net
@@ -241,6 +250,7 @@ espn.com
 eukaryotewritesblog.com
 euobserver.com
 eurasianet.org
+eurogamer.net
 euronews.com
 evertpot.com
 everydayastronaut.com
@@ -269,6 +279,7 @@ fstoppers.com
 ft.com
 ftc.gov
 fullstackeconomics.com
+gamedeveloper.com
 gamerant.com
 gatesnotes.com
 gcaptain.com
@@ -295,6 +306,7 @@ howtomarketagame.com
 hyper-resolution.org
 ianstormtaylor.com
 iapp.org
+ign.com
 ij.org
 illusionoftheyear.com
 imgur.com
@@ -304,6 +316,7 @@ independent.co.uk
 independent.com
 indiatimes.com
 inews.co.uk
+inference-review.com
 infoq.com
 inputmag.com
 interactionmagic.com
@@ -320,6 +333,7 @@ johncarlosbaez.wordpress.com
 johnsalvatier.org
 jonworth.eu
 joshwcomeau.com
+jremissing.com
 jstor.org
 judiciary.uk
 justice.gov
@@ -333,17 +347,21 @@ kion546.com
 kk.org
 klarna.com
 kline.sh
+klinger.io
 knowablemagazine.org
 knowingless.com
 kottke.org
 kqed.org
+kuow.org
 lareviewofbooks.org
 latimes.com
 learnxinyminutes.com
+leetcode.com
 levelshealth.com
 liebertpub.com
 lifehacker.com
 lilium.com
+linear.app
 linkedin.com
 livescience.com
 loc.gov
@@ -352,7 +370,9 @@ lowtechmagazine.com
 lrb.co.uk
 lrt.lt
 lse.ac.uk
+lucaspauker.com
 m.youtube.com
+maaw.info
 macleans.ca
 macrumors.com
 macworld.com
@@ -369,6 +389,7 @@ medrxiv.org
 mentalfloss.com
 mentalhealth.org.uk
 merriam-webster.com
+metacpc.org
 metafilter.com
 metro.co.uk
 might.net
@@ -416,6 +437,7 @@ nikkei.com
 ninds.nih.gov
 nltimes.nl
 noaa.gov
+nodum.org
 noemamag.com
 nofilmschool.com
 northwestern.edu
@@ -431,6 +453,7 @@ nymag.com
 nypost.com
 nytimes.com
 nyu.edu
+observablehq.com
 oceana.org
 onemileatatime.com
 online.wsj.com
@@ -446,8 +469,10 @@ oup.com
 ourworldindata.org
 outsideonline.com
 ox.ac.uk
+pahomepage.com
 palletsprojects.com
 pastemagazine.com
+paulbutler.org
 paulgraham.com
 perell.com
 persuasion.community
@@ -474,6 +499,7 @@ practical.engineering
 practicaltypography.com
 princeton.edu
 propublica.org
+prospect.org
 prospectmagazine.co.uk
 protocol.com
 prototypefund.de
@@ -493,6 +519,7 @@ reactjs.org
 readwriteweb.com
 reason.com
 reasonabledeviations.com
+reclaimthenet.org
 reclaimyourface.eu
 restofworld.org
 reuters.com
@@ -519,6 +546,7 @@ scmp.com
 scottaaronson.blog
 seattletimes.com
 sec.gov
+semiwiki.com
 senate.gov
 seriouseats.com
 seths.blog
@@ -548,6 +576,7 @@ spokesman.com
 springer.com
 staceyoniot.com
 stanford.edu
+state.gov
 statescoop.com
 statista.com
 statmodeling.stat.columbia.edu
@@ -584,6 +613,7 @@ theconversation.com
 thecorrespondent.com
 thecrow.uk
 thedissenter.org
+thedriftmag.com
 thedrive.com
 theguardian.com
 thehill.com
@@ -608,6 +638,7 @@ time.com
 timharford.com
 tomtunguz.com
 torontolife.com
+torontosun.com
 towardsdatascience.com
 treasury.gov
 trevorklee.com
@@ -626,6 +657,7 @@ ucsd.edu
 uga.edu
 uibk.ac.at
 uliwestphal.de
+uni-bonn.de
 unibas.ch
 unusualwhales.com
 up.com
@@ -640,6 +672,7 @@ vice.com
 vitalik.ca
 vivaldi.com
 vox.com
+vuejs.org
 warontherocks.com
 washingtonian.com
 washingtonpost.com

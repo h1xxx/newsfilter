@@ -30,6 +30,7 @@
 .NET
 .js
 737 Max
+A320
 AI
 AMP
 AWS
@@ -73,6 +74,7 @@ Astronom
 Autonomous
 Aviation
 B deal
+B350
 Bank
 Banking
 Battery
@@ -92,6 +94,7 @@ Brave
 Browser Ext
 Browser ext
 Business
+C#
 CEO
 CIA
 CO2
@@ -126,6 +129,7 @@ Colorado
 Committee
 Companies
 Company
+Compensation
 Compete
 Congress
 Constitution
@@ -133,6 +137,7 @@ Construct
 Consulta
 Consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 Contract
+Convicted
 Cooking
 Copilot
 Corona
@@ -156,12 +161,14 @@ Dementia
 Deno
 Depart
 Depress
+Deregulat
 Desert
 Dimension
 Discord
 Discriminat
 Disease
 Disney
+DoD
 Dollar
 Drag And Drop
 Drag and Drop
@@ -179,11 +186,13 @@ Emacs
 Emoji
 Empire
 Employ
+Enact
 Energy
 Engineer	!reverse	!Reverse
 Equation
 Evidence
 Experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
+F#
 FDA
 Facebook
 Family
@@ -215,6 +224,7 @@ Google Pixel
 Google Play
 Government
 Graduat
+Grant
 Guilty
 Has Died
 Has died
@@ -256,6 +266,7 @@ Japan
 JavaScript
 Javascript
 Jeff Bezos
+JetBlue
 Job
 John Deere
 Journalist
@@ -269,6 +280,7 @@ Lawsuit
 Lens
 Living
 Los Angeles
+Lottery
 M deal
 M1
 Mac 
@@ -276,6 +288,7 @@ Mac OS
 MacBook
 Macintosh
 Maestro
+Male
 Manufactur
 Market
 MasterCard
@@ -291,6 +304,7 @@ Middle age
 Military
 Milk
 Minecraft
+Minnesota
 Misinformation
 Mobile App
 Mobile app
@@ -331,6 +345,7 @@ Pandemic
 Parental
 Parents
 Parking
+Passport
 Patent
 Patient
 Payment
@@ -353,6 +368,8 @@ Pompeii
 Population
 Position
 Price
+Prime Minister
+Prime minister
 Productivity
 Propaganda
 Prosecute
@@ -374,7 +391,9 @@ Right to
 Robot
 Robots 
 Rocket
+Rogan
 Roman
+Russia
 Rust
 SARS
 SaaS
@@ -385,6 +404,7 @@ San Francisco
 School
 Scien
 Scrum
+Seattle
 Self-Driving
 Senior
 Series A
@@ -404,6 +424,7 @@ Silicon Valley
 Silo	!epsilon	!Epsilon
 Skill
 Skyscraper
+Sleep	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!hibernat	!Hibernat	!stand	!Stand
 Social
 Social Media
 Social media
@@ -447,6 +468,7 @@ Trains
 Transport
 Travel
 Treat
+Truck
 Tweet
 Twitch
 Twitter
@@ -470,6 +492,7 @@ Violating
 Visa
 Visual
 Visual Studio
+Vue
 WASM
 WSL
 Wall Street
@@ -480,8 +503,10 @@ Web App
 Web Dev
 Web Font
 Web Framework
+Web Service
 Web font
 Web framework
+Web service
 Web3
 WebAssembly
 WebGL
@@ -561,6 +586,7 @@ color
 committee
 companies
 company
+compensation
 compete
 congress
 constitution
@@ -568,6 +594,7 @@ construct
 consulta
 consumption	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 contract
+convicted
 cooking
 corona
 county
@@ -585,6 +612,7 @@ demand
 dementia
 depart
 depress
+deregulat
 desert
 dimension
 discriminat
@@ -600,6 +628,7 @@ electric
 emoji
 empire
 employ
+enact
 energy
 engineer	!reverse	!Reverse
 equation
@@ -628,6 +657,7 @@ geek
 gold
 government
 graduat
+grant
 guilty
 has died
 health
@@ -667,7 +697,9 @@ latin
 lawsuit
 lens
 living
+lottery
 macOS
+male
 manufactur
 market
 math
@@ -703,6 +735,7 @@ pandemic
 parental
 parents
 parking
+passport
 patent
 patient
 payment
@@ -720,6 +753,7 @@ population
 position
 price
 prices
+prime minister
 productivity
 propaganda
 prosecute
@@ -759,6 +793,7 @@ side project
 silo	!epsilon	!Epsilon
 skill
 skyscraper
+sleep	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!hibernat	!Hibernat	!stand	!Stand
 social
 social media
 soda
@@ -789,6 +824,7 @@ trains
 transport
 travel
 treat
+truck
 tweet
 union
 vaccina
@@ -802,10 +838,12 @@ visa
 visual
 water
 web 3.0
+web Service
 web app
 web dev
 web font
 web framework
+web service
 web3
 whistleblower
 wife
