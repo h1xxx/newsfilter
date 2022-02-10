@@ -60,8 +60,9 @@ type url struct {
 }
 
 type article struct {
-	title string
-	url   string
+	title  string
+	url    string
+	domain string
 }
 
 var MU = &sync.Mutex{}
@@ -738,6 +739,7 @@ func getCatchUpArticles(url string, client *http.Client) (string, []article) {
 		split := strings.Split(rawA, ">")
 		a.url = strings.Split(split[0], "\" ")[0]
 		a.title = strings.Split(split[1], "</a")[0]
+		a.domain = urlToDomain(a.url)
 		articles = append(articles, a)
 	}
 
@@ -828,7 +830,7 @@ func prepareHtml(hn *hnResults, lrsStories *[]lrsStory,
 		for i, a := range articles {
 			newLine := "\n"
 			if i < len(articles)-1 && isPrevArticle(articles[i+1]) {
-				newLine = ", "
+				newLine = ""
 			}
 			printBcArticle(fd, a, hn, newLine)
 		}
@@ -844,6 +846,14 @@ func isPrevArticle(a article) bool {
 	case strings.Contains(t, "PDF") && len(t) <= 8:
 		return true
 	case strings.HasPrefix(t, "[") && strings.HasSuffix(t, "]"):
+		return true
+	case strings.HasPrefix(t, "komunikat") && len(t) <= 32:
+		return true
+	case strings.HasPrefix(t, "szczegóły") && len(t) <= 32:
+		return true
+	case strings.HasPrefix(t, "more info") && len(t) <= 32:
+		return true
+	case len(t) <= 10:
 		return true
 	}
 	return false
@@ -906,8 +916,8 @@ func printBcArticle(fd *os.File, a article, hn *hnResults, newLine string) {
 		hnUrl := hnItemUrl + strconv.Itoa(hn.urls[idx].id)
 		hnLink = fmt.Sprintf("<a href='%s'>hn</a>", hnUrl)
 	}
-	printString := fmt.Sprintf("<a href='%s'>%s</a> (%s)",
-		a.url, a.title, hnLink)
+	printString := fmt.Sprintf("<a href='%s'>%s</a>\n(%s) (%s)\n",
+		a.url, a.title, hnLink, a.domain)
 
 	fmt.Fprintf(fd, "%s%s", printString, newLine)
 }
