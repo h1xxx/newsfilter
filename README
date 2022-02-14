@@ -71,6 +71,7 @@ notes
 todo
 ====
 
+- add new stories and filter them
 - on http error skip processing
 - add option to show blocked pages sorted by popularity and with a reason for a
 block (what url + what keyword)
