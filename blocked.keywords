@@ -8,6 +8,7 @@
  city
  gas 
  heat	!heatmap	!Heatmap
+ kid 
 (180
 (181
 (182
@@ -29,7 +30,17 @@
 (YC
 .NET
 .js
+0yo
+1yo
+2yo
+3yo
+4yo
+5yo
+6yo
 737 Max
+7yo
+8yo
+9yo
 A320
 AI
 AMP
@@ -41,13 +52,15 @@ Accounting
 Acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Activision
 Addict
+Adobe
 Advent Of Code
 Advent of Code
-Africa
+Advert
 Africa
 Ageism
 Agile
 AirPod
+AirTag
 Airbnb
 Airbus
 Albania
@@ -62,6 +75,7 @@ Angular
 Animat
 Antarctic
 Antitrust
+Apartment
 App Store
 App store
 Apple
@@ -69,12 +83,15 @@ Apply
 Archaeo
 Archeo
 Arctic
+Arithm
 Assange
 Astronom
 Autonomous
 Aviation
 B deal
 B350
+Babies
+Baby
 Bank
 Banking
 Battery
@@ -86,7 +103,6 @@ Biontech
 Blender
 Blizzard
 Blockchain
-Boeing
 Boeing
 Boss
 Brain
@@ -106,6 +122,7 @@ California
 Campaign
 Cancer
 Cannabis
+Canvas
 Capital
 Carbon
 Career
@@ -126,11 +143,13 @@ Cognitive
 Collabor
 Color
 Colorado
+Columbia
 Committee
 Companies
 Company
 Compensation
 Compete
+Competition
 Congress
 Constitution
 Construct
@@ -143,7 +162,6 @@ Copilot
 Corona
 Coronavirus
 County
-County
 Course
 Court
 Covid
@@ -154,8 +172,12 @@ Currency
 Customer
 Cycl
 DNA
+Daughter
 Deadliest
 Deadly
+Death
+Debate
+Debt
 Demand
 Dementia
 Deno
@@ -163,6 +185,9 @@ Depart
 Depress
 Deregulat
 Desert
+Diagnosed
+Diagnoses
+Diagnosis
 Dimension
 Discord
 Discriminat
@@ -179,6 +204,7 @@ Econom
 Edge
 Education
 Egypt
+Einstein
 Electric
 Elizabeth Holmes
 Elon Musk
@@ -193,10 +219,12 @@ Equation
 Evidence
 Experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 F#
+FCC
 FDA
 Facebook
 Family
 Federal
+Feynman
 Finance
 Financial
 Fintech
@@ -207,6 +235,7 @@ First Time
 Fiscal
 Flask
 Flight
+Flutter
 Food
 Fossil
 Founder
@@ -226,8 +255,11 @@ Government
 Graduat
 Grant
 Guilty
+HTML5
+Harvard
 Has Died
 Has died
+Hazard
 Health
 High School
 High school
@@ -241,11 +273,13 @@ Housing
 Human
 Hundred
 Husband
+Huxley
 Hydro
 IKEA
 IPO
 IRS
 Ikea
+Illustrat
 Immunity
 Impairment
 India
@@ -272,13 +306,16 @@ John Deere
 Journalist
 Judge
 Judic
+Kid 
 Kids
 Laser
 Latin 
 Launch HN
 Lawsuit
+Lego
 Lens
 Living
+Lobby
 Los Angeles
 Lottery
 M deal
@@ -313,6 +350,7 @@ Money
 Motorcycle
 Mozilla
 Mushrooms
+Music
 NASA
 NFT
 NPM
@@ -320,8 +358,6 @@ Navigation
 Navy
 Nazi
 New York
-New York
-NextJS
 NextJS
 Nigeria
 Nobel
@@ -338,6 +374,7 @@ Office
 Olymp
 Omicron
 OnlyFans
+Orwell
 Oxygen
 PHP
 Paid
@@ -351,8 +388,10 @@ Patient
 Payment
 Penalty
 Pentagon
+Pesticide
 Peter Thiel
 Pfizer
+Pharma
 Phone
 Physicist
 Pittsburgh
@@ -361,15 +400,19 @@ Pixel
 Plane
 Plant
 Plastic
+Pneumonia
+Poison	!cache	!Cache	!DNS	!data	!Data	!ARP
 Police
 Politic
 Pollut
 Pompeii
 Population
+Portugal
 Position
 Price
 Prime Minister
 Prime minister
+Procrast
 Productivity
 Propaganda
 Prosecute
@@ -400,12 +443,13 @@ SaaS
 Safari
 Salar
 San Francisco
-San Francisco
+Scandal
 School
 Scien
 Scrum
 Seattle
 Self-Driving
+Senat
 Senior
 Series A
 Series B
@@ -422,12 +466,16 @@ Side Project
 Side project
 Silicon Valley
 Silo	!epsilon	!Epsilon
+Skate
+Skating
 Skill
 Skyscraper
+Slack	!Slackware
 Sleep	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!hibernat	!Hibernat	!stand	!Stand
 Social
 Social Media
 Social media
+Society
 Soda
 Software Engineer
 Software engineer
@@ -436,6 +484,8 @@ Space Station
 SpaceX
 Species
 Sphere
+Spotify
+Spreadsheet
 Starlink
 Startup
 Steve Jobs
@@ -469,6 +519,7 @@ Transport
 Travel
 Treat
 Truck
+Trudeau
 Tweet
 Twitch
 Twitter
@@ -541,19 +592,24 @@ accounting
 acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 acquires
 addict
+advert
 ageism
 alcohol
 allege
 ancient
 animat
 antitrust
+apartment
 app store
 apply
 archaeo
 archeo
+arithm
 astronom
 autonomous
 aviation
+babies
+baby
 banking
 battery
 big tech
@@ -569,6 +625,7 @@ calendar
 campaign
 cancer
 cannabis
+canvas
 capital
 carbon
 career
@@ -588,6 +645,7 @@ companies
 company
 compensation
 compete
+competition
 congress
 constitution
 construct
@@ -606,14 +664,21 @@ culture
 currency
 customer
 cycl
+daughter
 deadliest
 deadly
+death
+debate
+debt
 demand
 dementia
 depart
 depress
 deregulat
 desert
+diagnosed
+diagnoses
+diagnosis
 dimension
 discriminat
 disease
@@ -660,6 +725,7 @@ graduat
 grant
 guilty
 has died
+hazard
 health
 high school
 hire
@@ -675,6 +741,7 @@ hydro
 iCloud
 iOS
 iPhone
+illustrat
 immunity
 impairment
 income
@@ -697,6 +764,7 @@ latin
 lawsuit
 lens
 living
+lobby
 lottery
 macOS
 male
@@ -716,6 +784,7 @@ monetiz
 money
 motorcycle
 mushrooms
+music
 navigation
 nazi
 non-tech
@@ -740,12 +809,16 @@ patent
 patient
 payment
 penalty
+pesticide
+pharma
 phone
 physicist
 pixel
 plane
 plant
 plastic
+pneumonia
+poison	!cache	!Cache	!DNS	!data	!Data	!ARP
 police
 politic
 pollut
@@ -754,6 +827,7 @@ position
 price
 prices
 prime minister
+procrast
 productivity
 propaganda
 prosecute
@@ -774,9 +848,11 @@ rocket
 roman
 résumé
 salar
+scandal
 school
 scien
 self-driving
+senat
 senior
 series A
 series B
@@ -791,16 +867,20 @@ ship	!censor	!Censor	!owner	!Owner	!source	!Source	!code	!Code
 shortage
 side project
 silo	!epsilon	!Epsilon
+skate
+skating
 skill
 skyscraper
 sleep	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!hibernat	!Hibernat	!stand	!Stand
 social
 social media
+society
 soda
 software engineer
 solar
 species
 sphere
+spreadsheet
 startup
 student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 study finds
@@ -854,27 +934,3 @@ work-week
 workplace
 workweek
 young
-advert
-Advert
-debt
-Debt
-Procrast
-procrast
-senat
-Senat
-Feynman
-death
-Death
-Arithm
-arithm
-Einstein
-Columbia
-Adobe
-Harvard
-Flutter
-Society
-society
-Babies
-babies
-pharma
-Pharma
