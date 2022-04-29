@@ -73,7 +73,7 @@ func main() {
 
 	homeDir, err := os.UserHomeDir()
 	errExit(err, "error: cannot get home dir")
-	progDir := homeDir + "/.config/newsfilter/"
+	progDir := homeDir + "/.local/share/newsfilter/"
 
 	client := &http.Client{}
 	now := time.Now()
