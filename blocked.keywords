@@ -1,11 +1,16 @@
  Bubble	!sort	!Sort
  City
+ Dies Of
+ Dies of
+ EV 
+ EVs 
  FB 
  Gas 
  Heat	!heatmap	!Heatmap
  YC
  bubble	!sort	!Sort
  city
+ dies of
  gas 
  heat	!heatmap	!Heatmap
  kid 
@@ -30,25 +35,57 @@
 (YC
 .NET
 .js
+0 Year Old
+0 Year old
+0 year old
 0yo
+1 Year Old
+1 Year old
+1 year old
 1yo
+2 Year Old
+2 Year old
+2 year old
 2yo
+3 Year Old
+3 Year old
+3 year old
 3yo
+4 Year Old
+4 Year old
+4 year old
 4yo
+5 Year Old
+5 Year old
+5 year old
 5yo
+6 Year Old
+6 Year old
+6 year old
 6yo
+7 Year Old
+7 Year old
+7 year old
 737 Max
 7yo
+8 Year Old
+8 Year old
+8 year old
 8yo
+9 Year Old
+9 Year old
+9 year old
 9yo
 A320
 AI
 AMP
+ARR
 AWS
 Academi
 Accident
 Account
 Accounting
+Acoustic
 Acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 Activision
 Addict
@@ -59,15 +96,21 @@ Advert
 Africa
 Ageism
 Agile
+Air France
 AirPod
 AirTag
 Airbnb
 Airbus
+Aircraft
+Airport
 Albania
 Alcohol
+Algebra
 Allege
+Altruis
 Alzheimer
 Amazon
+Ambient
 America
 Ancient
 Android
@@ -84,21 +127,28 @@ Archaeo
 Archeo
 Arctic
 Arithm
+Armenia
 Assange
+Asteroid
 Astronom
 Autonomous
+Avatar
 Aviation
 B deal
+B.C.
 B350
 Babies
 Baby
 Bank
 Banking
+Bankrupt
 Battery
 Bay Area
+Bells
 Big Tech
 Bike
 Billing
+Biolog
 Biontech
 Blender
 Blizzard
@@ -109,6 +159,9 @@ Brain
 Brave
 Browser Ext
 Browser ext
+Buddhi
+Bulgaria
+Burnout
 Business
 C#
 CEO
@@ -119,6 +172,7 @@ CSS
 Caffeine
 Calendar
 California
+Camera
 Campaign
 Cancer
 Cannabis
@@ -127,20 +181,25 @@ Capital
 Carbon
 Career
 Cars
+Celebrat
 Charg
 Chess
+Chicken
 Child
 China
 Christmas
 Chrome
 Chromium
+Church
 Cities
 Climate
 Clinical
 CoV-2
 Coffee
+Cognit
 Cognitive
 Collabor
+College
 Color
 Colorado
 Columbia
@@ -150,6 +209,7 @@ Company
 Compensation
 Compete
 Competition
+Competitor
 Congress
 Constitution
 Construct
@@ -169,6 +229,7 @@ Credit Card
 Credit card
 Culture
 Currency
+Curriculum
 Customer
 Cycl
 DNA
@@ -178,6 +239,7 @@ Deadly
 Death
 Debate
 Debt
+Deepfake
 Demand
 Dementia
 Deno
@@ -188,17 +250,23 @@ Desert
 Diagnosed
 Diagnoses
 Diagnosis
+Dies At
+Dies at
 Dimension
+Dinosaur
 Discord
 Discriminat
 Disease
 Disney
 DoD
+Does Not Exist
 Dollar
 Drag And Drop
 Drag and Drop
 Drone
 Drug
+Dying
+Earth
 Eating	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!beat	!Beat	!repeat	!Repeat	!cheat	!Cheat	!defeat	!Defeat	!creat	!Creat	!treat	!Treat
 Econom
 Edge
@@ -213,22 +281,25 @@ Emoji
 Empire
 Employ
 Enact
+Endemic
 Energy
 Engineer	!reverse	!Reverse
+Entrepreneur
 Equation
 Evidence
-Experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 F#
 FCC
 FDA
 Facebook
 Family
 Federal
+Feudal
 Feynman
 Finance
 Financial
 Fintech
 Fired
+Firefight
 Firefox
 Fires
 First Time
@@ -237,16 +308,27 @@ Flask
 Flight
 Flutter
 Food
+Football
+Ford
 Fossil
 Founder
 Frat
+French
 Fruit
+Fuel
 Fund 
 Funding
 Funds
 Fung
 GDPR
+GNOME
+GTK
+Game Dev
+Game dev
 Geek
+Genetic
+Geotherm
+Gnome
 Gold
 Google Anal
 Google Pixel
@@ -254,18 +336,23 @@ Google Play
 Government
 Graduat
 Grant
+Gtk
 Guilty
 HTML5
+Happiness
+Happy
 Harvard
 Has Died
 Has died
 Hazard
 Health
+Helium
 High School
 High school
 Hire
 Hiring
 Hong Kong
+Hormone
 Hospital
 Hours
 House
@@ -277,6 +364,8 @@ Huxley
 Hydro
 IKEA
 IPO
+IQ 
+IQs
 IRS
 Ikea
 Illustrat
@@ -287,7 +376,10 @@ Industry
 Inflation
 Infring
 Instagram
+Institut
 Intelligence
+Interviewer
+Interviews
 Introvert
 Invent
 Invest
@@ -306,17 +398,24 @@ John Deere
 Journalist
 Judge
 Judic
+KDE
 Kid 
 Kids
 Laser
 Latin 
 Launch HN
 Lawsuit
+Layoff
 Lego
 Lens
+LinkedIn
 Living
 Lobby
+Loneliness
+Lonely
+Loot
 Los Angeles
+Lost $
 Lottery
 M deal
 M1
@@ -326,16 +425,23 @@ MacBook
 Macintosh
 Maestro
 Male
+Mammal
 Manufactur
+Marathon
 Market
+Marriage
 MasterCard
 Math
 Measure
+Medic
 Medicine
+Meditat
 Metaverse
+Mice
 Michigan
 Microservice
 Microsoft
+Microwave
 Middle Age
 Middle age
 Military
@@ -343,8 +449,10 @@ Milk
 Minecraft
 Minnesota
 Misinformation
+Missile
 Mobile App
 Mobile app
+Moderna
 Monetiz
 Money
 Motorcycle
@@ -354,6 +462,7 @@ Music
 NASA
 NFT
 NPM
+Nadella
 Navigation
 Navy
 Nazi
@@ -368,13 +477,16 @@ Note tak
 Notes
 Notice
 Nuclear
+Nurse
 Obsess
 Ocean	!Digital
 Office
 Olymp
 Omicron
 OnlyFans
+Orbit
 Orwell
+Outdoor
 Oxygen
 PHP
 Paid
@@ -384,6 +496,7 @@ Parents
 Parking
 Passport
 Patent
+Pathogen
 Patient
 Payment
 Penalty
@@ -393,6 +506,7 @@ Peter Thiel
 Pfizer
 Pharma
 Phone
+Photography
 Physicist
 Pittsburgh
 Pixar
@@ -409,18 +523,28 @@ Pompeii
 Population
 Portugal
 Position
+Potato
+Poverty
 Price
 Prime Minister
 Prime minister
 Procrast
 Productivity
+Profession
 Propaganda
 Prosecute
 Protein
+Proton
+Psycholog
+Pulitzer
+Qt
 Quit	!quite	!Quite
 RNA
+RPG
 Racist
 Radiation
+Rails
+Raises
 React
 Recipe
 Remote Work
@@ -436,6 +560,7 @@ Robots
 Rocket
 Rogan
 Roman
+Rupee
 Russia
 Rust
 SARS
@@ -444,10 +569,13 @@ Safari
 Salar
 San Francisco
 Scandal
+Scholar
 School
 Scien
 Scrum
+Sculpture
 Seattle
+Seismic
 Self-Driving
 Senat
 Senior
@@ -460,6 +588,8 @@ Series F
 Series G
 Server-less
 Serverless
+Shader
+Sheds
 Ship	!censor	!Censor	!owner	!Owner	!source	!Source	!code	!Code
 Shortage
 Side Project
@@ -468,6 +598,7 @@ Silicon Valley
 Silo	!epsilon	!Epsilon
 Skate
 Skating
+Sketch
 Skill
 Skyscraper
 Slack	!Slackware
@@ -480,24 +611,30 @@ Soda
 Software Engineer
 Software engineer
 Solar
+Soybean
 Space Station
 SpaceX
 Species
 Sphere
 Spotify
 Spreadsheet
+Sprout
 Starlink
 Startup
 Steve Jobs
+Strategy
+Streaming
 Stripe
 Student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu
 Study Finds
 Study finds
 Subscri
+Subsid
 Success
 Suggest
 Supreme Court
 Surveillance
+Surviv
 Sweden
 Synth	!speech	!Speech
 Taiwan
@@ -509,10 +646,15 @@ Teams
 Teen
 Telescope
 Tesla
+Tether
+The United States
 Theft
 Therapy
+Tibet
 TikTok
 Tim Cook
+Tinder
+Tolkien
 Toxic
 Trains
 Transport
@@ -524,31 +666,48 @@ Tweet
 Twitch
 Twitter
 TypeScript
+Typeface
 Typescript
+Typograph
 UI	!TUI	!UUID	!Unix	!terminal	!Terminal	!UNIX	!Linux	!server	!Server	!memory	!Memory	!CPU	!cpu
 UX
 Uber
 Uganda
 Ukraine
 Union
+United Nations
+Universe
 University
+Unreal Engine
+Urban
+Utah
 VS Code
 Vaccina
 Vaccine
 Valuation
+Vancouver
 Variant
 Vegetable
 Vehicle
+Vibration
 Violating
 Visa
 Visual
 Visual Studio
+Voting
 Vue
 WASM
+WFH
 WSL
+WW1
+WW2
+WW3
+WWI
 Wall Street
+Warfare
 Wasm
 Water
+Wayland
 Web 3.0
 Web App
 Web Dev
@@ -561,8 +720,11 @@ Web service
 Web3
 WebAssembly
 WebGL
+WebSocket
 Webb Space
+Websocket
 Webview
+Weight	!lightweight	!Lightweight
 WhatsApp
 Whistleblower
 Wife
@@ -573,6 +735,8 @@ WordPress
 Wordle
 Wordpress
 Work week
+Work-Life
+Work-life
 Work-week
 Workplace
 Workweek
@@ -589,13 +753,19 @@ academi
 accident
 account
 accounting
+acoustic
 acqui	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 acquires
 addict
 advert
 ageism
+aircraft
+airport
 alcohol
+algebra
 allege
+altruis
+ambient
 ancient
 animat
 antitrust
@@ -605,23 +775,31 @@ apply
 archaeo
 archeo
 arithm
+asteroid
 astronom
 autonomous
+avatar
 aviation
 babies
 baby
 banking
+bankrupt
 battery
+bells
 big tech
 bike
 billing
+biolog
 blockchain
 boss
 brain
 browser ext
+buddhi
+burnout
 business
 caffeine
 calendar
+camera
 campaign
 cancer
 cannabis
@@ -630,15 +808,20 @@ capital
 carbon
 career
 cars	!side	!Side
+celebrat
 charg
 chess
+chicken
 child
+church
 cities
 climate
 clinical
 coffee
+cognit	!recognit	!Recognit
 cognitive
 collabor
+college
 color
 committee
 companies
@@ -646,6 +829,7 @@ company
 compensation
 compete
 competition
+competitor
 congress
 constitution
 construct
@@ -662,6 +846,7 @@ covid
 credit card
 culture
 currency
+curriculum
 customer
 cycl
 daughter
@@ -670,6 +855,7 @@ deadly
 death
 debate
 debt
+deepfake
 demand
 dementia
 depart
@@ -679,13 +865,20 @@ desert
 diagnosed
 diagnoses
 diagnosis
+dies At
+dies at
 dimension
+dinosaur
 discriminat
 disease
+does not exist
 dollar
 drag and drop
 drone
 drug
+dying
+eBay
+earth
 eating	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!beat	!Beat	!repeat	!Repeat	!cheat	!Cheat	!defeat	!Defeat	!creat	!Creat	!treat	!Treat
 econom
 education
@@ -694,42 +887,55 @@ emoji
 empire
 employ
 enact
+endemic
 energy
 engineer	!reverse	!Reverse
+entrepreneur
 equation
 evidence
-experience	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 family
 federal
+feudal
 finance
 financial
 fintech
 fired
+firefight
 fires
 first time
 fiscal
 flight
 food
+football
 fossil
 founder
 frat
 fruit	!Ada
+fuel
 fund 
 funding
 funds
 fung
+game Dev
+game dev
 geek
+genetic
+geotherm
 gold
 government
 graduat
 grant
 guilty
+happiness
+happy
 has died
 hazard
 health
+helium
 high school
 hire
 hiring
+hormone
 hospital
 hours
 house
@@ -748,7 +954,10 @@ income
 industry
 inflation
 infring
+institut
 intelligence
+interviewer
+interviews
 introvert
 invent
 invest
@@ -762,23 +971,36 @@ kids
 laser
 latin 
 lawsuit
+layoff
 lens
 living
 lobby
+loneliness
+lonely
+loot
+lost $
 lottery
 macOS
 male
+mammal
 manufactur
+marathon
 market
+marriage
 math
 measure
+medic
 medicine
+meditat
 metaverse
+mice
 microservice
+microwave
 middle age
 military
 milk
 misinformation
+missile
 mobile app
 monetiz
 money
@@ -794,10 +1016,13 @@ notes
 notice
 npm
 nuclear
+nurse
 obsess
 ocean
 office
 olymp
+orbit
+outdoor
 oxygen
 paid
 pandemic
@@ -806,12 +1031,14 @@ parents
 parking
 passport
 patent
+pathogen
 patient
 payment
 penalty
 pesticide
 pharma
 phone
+photography
 physicist
 pixel
 plane
@@ -824,17 +1051,23 @@ politic
 pollut
 population
 position
+potato
+poverty
 price
 prices
 prime minister
 procrast
 productivity
+profession
 propaganda
 prosecute
 protein
+proton
+psycholog
 quit	!quite	!Quite	!ubiquit	!Ubiquit
 racist
 radiation
+raises
 recipe
 remote work
 render
@@ -846,11 +1079,15 @@ robot
 robots 
 rocket
 roman
+rupee
 résumé
 salar
 scandal
+scholar
 school
 scien
+sculpture
+seismic
 self-driving
 senat
 senior
@@ -863,12 +1100,15 @@ series F
 series G
 server-less
 serverless
+shader
+sheds
 ship	!censor	!Censor	!owner	!Owner	!source	!Source	!code	!Code
 shortage
 side project
 silo	!epsilon	!Epsilon
 skate
 skating
+sketch
 skill
 skyscraper
 sleep	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!memory	!Memory	!CPU	!cpu	!hibernat	!Hibernat	!stand	!Stand
@@ -878,17 +1118,23 @@ society
 soda
 software engineer
 solar
+soybean
 species
 sphere
 spreadsheet
+sprout
 startup
+strategy
+streaming
 student	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server
 study finds
 subscri
+subsid
 success
 suggest
 supreme court
 surveillance
+surviv
 synth	!speech	!Speech
 take Note
 take note
@@ -897,6 +1143,7 @@ teach
 teams
 teen
 telescope
+the United States
 theft
 therapy
 toxic
@@ -906,16 +1153,23 @@ travel
 treat
 truck
 tweet
+typeface
+typograph
 union
+universe
+urban
 vaccina
 vaccine
 valuation	!evaluation	!Evaluation
 variant
 vegetable
 vehicle
+vibration
 violating
 visa
 visual
+voting
+warfare
 water
 web 3.0
 web Service
@@ -925,188 +1179,15 @@ web font
 web framework
 web service
 web3
+weight	!lightweight	!Lightweight
 whistleblower
 wife
 women
 wood
 work week
+work-Life
+work-life
 work-week
 workplace
 workweek
 young
-shader
-Shader
-WebSocket
-Websocket
-Rails
-algebra
-Algebra
-asteroid
-Asteroid
-dinosaur
-Dinosaur
-mammal
-Mammal
-surviv
-Surviv
-Soybean
-soybean
-genetic
-Genetic
-mice
-Mice
-Cognit
-cognit	!recognit	!Recognit
-French
-sketch
-Sketch
-geotherm
-Geotherm
-urban
-Urban
-warfare
-Warfare
-WW3
-WW2
-WW1
-chicken
-Chicken
-universe
-Universe
-Bulgaria
-Dies At
-dies At
-dies at
-Dies at
-Nadella
-Game Dev
-Game dev
-game Dev
-game dev
-Psycholog
-psycholog
-meditat
-Meditat
-Does Not Exist
-does not exist
-Armenia
-burnout
-Burnout
-sprout
-Sprout
-potato
-Potato
-rupee
-Rupee
-seismic
-Seismic
-Utah
-vibration
-Vibration
-dying
-Dying
-Ambient
-ambient
-Ford
- EVs 
- EV 
-Deepfake
-deepfake
-Weight	!lightweight	!Lightweight
-weight	!lightweight	!Lightweight
-marathon
-Marathon
-sheds
-Sheds
-lost $
-Lost $
-Lonely
-lonely
-Loneliness
-loneliness
-Celebrat
-celebrat
-Typeface
-typeface
-Tibet
- dies of
- Dies of
- Dies Of
-subsid
-Subsid
-entrepreneur
-Entrepreneur
-Moderna
-microwave
-Microwave
-photography
-Photography
-Typograph
-typograph
-helium
-Helium
-Proton
-proton
-orbit
-Orbit
-earth
-Earth
-strategy
-Strategy
-Tinder
-institut
-Institut
-Tolkien
-medic
-Medic
-camera
-Camera
-Happiness
-happiness
-Happy
-happy
-WFH
-competitor
-Competitor
-outdoor
-Outdoor
-bankrupt
-Bankrupt
-interviews
-Interviews
-airport
-Airport
-Unreal Engine
-Streaming
-streaming
-buddhi
-Buddhi
-ARR
-aircraft
-Aircraft
-missile
-Missile
-B.C.
-biolog
-Biolog
-voting
-Voting
-The United States
-the United States
-Vancouver
-Marriage
-marriage
-United Nations
-altruis
-Altruis
-hormone
-Hormone
-Firefight
-firefight
-Nurse
-nurse
-profession
-Profession
-football
-Football
-Air France
