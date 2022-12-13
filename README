@@ -11,7 +11,7 @@ browser.
 Goals:
 - find high quality, but less popular articles
 - save time and energy while browsing hacker news
-- lessen addictive quality of Hacker News, by showing only each article once
+- lessen addictive quality of Hacker News, by showing each article only once
 
 Topics permanently blocked by default:
 - news from the outside world
@@ -68,8 +68,8 @@ notes
 
 
 
-todo
-====
+todo (or not)
+=============
 
 - add new stories and filter them
 - on http error skip processing
