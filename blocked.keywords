@@ -28,6 +28,7 @@
 2 Year old
 2 Year Old
 2yo
+3D
 3 year old
 3 Year old
 3 Year Old
@@ -94,6 +95,7 @@ Air Condition
 Air-Condition
 aircraft
 Aircraft
+Air Force
 Air France
 airplay
 Airplay
@@ -143,6 +145,7 @@ Archaeo
 archeo
 Archeo
 Arctic
+Area 51
 arithm
 Arithm
 Armenia
@@ -154,6 +157,8 @@ asteroid
 Asteroid
 astronom
 Astronom
+audible
+Audible
 autonomous
 Autonomous
 avatar
@@ -275,6 +280,8 @@ cities
 Cities
  city
  City
+click	!zero	!Zero
+Click	!zero	!Zero
 climate
 Climate
 clinical
@@ -310,6 +317,8 @@ competitor
 Competitor
 congress
 Congress
+conscious
+Conscious
 constitution
 Constitution
 construct
@@ -358,6 +367,8 @@ cycl
 Cycl
 daughter
 Daughter
+daylight
+Daylight
 deadliest
 Deadliest
 deadly
@@ -464,14 +475,20 @@ entrepreneur
 Entrepreneur
 equation
 Equation
+eruption
+Eruption
 Eurovision
  EV 
+Everest
 evidence
 Evidence
  EVs 
 exercise
 Exercise
 F#
+F-1
+F-2
+F-3
 Facebook
 family
 Family
@@ -514,6 +531,8 @@ Food
 football
 Football
 Ford
+fortune
+Fortune
 fossil
 Fossil
 founder
@@ -523,6 +542,8 @@ Frat
 French
 fridge
 Fridge
+friends
+Friends
 Fruit
 fruit	!Ada
 fuel
@@ -567,6 +588,7 @@ grant
 Grant
 Gtk
 GTK
+GUI
 guilty
 Guilty
 hadron
@@ -589,6 +611,7 @@ helium
 Helium
 helmet
 Helmet
+Heroku
 high school
 High school
 High School
@@ -718,6 +741,8 @@ LeetCode
 Lego
 lens
 Lens
+licens
+Licens
 LinkedIn
 living
 Living
@@ -741,6 +766,7 @@ MacBook
 Macintosh
 macOS
 Mac OS
+MacOS
 Macs
 Maestro
 male
@@ -769,6 +795,7 @@ medieval
 Medieval
 meditat
 Meditat
+Meta 
 metaverse
 Metaverse
 mice
@@ -824,6 +851,7 @@ New York
 NextJS
 NFT
 Nigeria
+NLP
 Nobel
 Node.js
 non-tech
@@ -859,11 +887,14 @@ Omicron
 onboarding
 Onboarding
 OnlyFans
+opportun
+Opportun
 orbit
 Orbit
 organic
 Organic
 Orwell
+OS X
 outdoor
 Outdoor
 oxygen
@@ -897,6 +928,7 @@ Patreon
  Pay 
 payment
 Payment
+PayPal
 penalty
 Penalty
 Pentagon
@@ -914,11 +946,11 @@ photo	!reverse	!Reverse	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Serv
 Photo	!reverse	!Reverse	!Linux	!soft	!Soft	!Comp	!comp	!Unix	!UNIX	!server	!Server	!leak	!Leak
 PHP
 physicist
-physicist
-Physicist
 Physicist
 physics
 Physics
+piano
+Piano
 Pittsburgh
 Pixar
 pixel
@@ -948,6 +980,8 @@ Politic
 pollut
 Pollut
 Pompeii
+ponzi
+Ponzi
 population
 Population
 Portugal
@@ -957,6 +991,9 @@ potato
 Potato
 poverty
 Poverty
+power grid
+Power grid
+Power Grid
 price
 Price
 prices
@@ -991,6 +1028,8 @@ public beta
 Public beta
 Public Beta
 Pulitzer
+puzzle
+Puzzle
 Qt
 quarter
 Quarter
@@ -1001,7 +1040,6 @@ Racist
 radiation
 Radiation
  rails
-Rails
 Rails
  rain
  Rain
@@ -1067,7 +1105,11 @@ school
 School
 scien
 Scien
+sclerosis
+Sclerosis
 Scotland
+scroll
+Scroll
 Scrum
 sculpture
 Sculpture
@@ -1132,6 +1174,8 @@ Social
 social media
 Social media
 Social Media
+societal
+Societal
 society
 Society
 soda
@@ -1164,6 +1208,8 @@ Stablecoin
 Starlink
 startup
 Startup
+statistical
+Statistical
 Steve Jobs
 strategy
 Strategy
@@ -1185,6 +1231,8 @@ sugar
 Sugar
 suggest
 Suggest
+ suing 
+ Suing 
  sun 
 supplement
 Supplement
@@ -1263,6 +1311,7 @@ Uber
 Uganda
 UI	!TUI	!UUID	!Unix	!terminal	!Terminal	!UNIX	!Linux	!server	!Server	!memory	!Memory	!CPU	!cpu
 Ukraine
+UN 
 union
 Union
 United Nations
@@ -1288,6 +1337,7 @@ vegetable
 Vegetable
 vehicle
 Vehicle
+Venmo
 vibration
 Vibration
 violating
