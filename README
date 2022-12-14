@@ -3,26 +3,30 @@ newsfilter
 ==========
 
 A small program to fetch articles from Hacker News, lobste.rs and badcyber.com
-and then extract only technical ones with use of blacklisted domains and keywords.
+and extract only tech articles with use of blacklisted domains and keywords.
 
 Prepares an html file with a list of articles that can be read from any www
 browser.
 
+First program run grabs all the available and relevant articles, subsequent
+runs show only new articles that came up since the last run.
+
 Goals:
+- focus on technical side of computing
 - find high quality, but less popular articles
 - save time and energy while browsing hacker news
-- lessen addictive quality of Hacker News, by showing each article only once
+- lessen the addictive quality of HN by showing each article only once
 
 Topics permanently blocked by default:
 - news from the outside world
 - business side of things
-- career, interviewing, money etc.
+- career, interviewing, money, stock market etc.
 - so called modern web (large browsers, JavaScript, Node.js etc.)
 - non-free platforms (Windows, Apple)
 - Emacs (I really tried to like it, lol)
-- GUI, graphics
+- GUI, anything about computer graphics
 - audio processing
-- smartphones.
+- smartphones
 
 Topics filtered temporarily:
 - Rust - until the language becomes more settled.
@@ -40,10 +44,25 @@ dependencies
 
 
 
-building
-========
+build
+=====
 
 $ make
+
+
+
+install
+=======
+
+$ make install
+# make bin-install
+
+
+
+run
+===
+
+newsfilter || ./newsfilter
 
 
 
