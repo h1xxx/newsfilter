@@ -31,7 +31,7 @@ Topics permanently blocked by default:
 Topics filtered temporarily:
 - Rust - until the language becomes more settled.
 
-Only Hacker News stories are filtered, as other sources modarate their content
+Only Hacker News stories are filtered, as other sources moderate their content
 heavily.
 
 
@@ -54,8 +54,11 @@ $ make
 install
 =======
 
-$ make install
-# make bin-install
+install blocklists to ~/.local/share/newsfilter/
+  $ make install
+
+install binaries to $(DESTDIR)/bin
+  # make DESTDIR= bin-install
 
 
 
@@ -69,7 +72,7 @@ newsfilter || ./newsfilter
 notes
 =====
 
-- input and output data is stored in ~/.config/newsfilter
+- input and output data is stored in ~/.local/share/newsfilter/
 
 - first run is quite long as all current hacker news stories are fetched
 
@@ -77,13 +80,19 @@ notes
   the previous html file
 
 - blocked.domains is a list of domains that usually provide non-technical
-  articles on hacker news
+  articles on hacker news; every article from this domain on HN is filtered out
 
 - blocked.keywords are searched for in hacker news story titles, but not in
-  lobste.rs titles; lobste.rs has in general higher quality of articles, so no
-  filtering is done there, except for score and number of comments
- 
-- filtering rules are stored in filterHn and filterLrs functions
+  lobste.rs and badcyber.com article titles
+
+- filtering rules are stored in filterHn and filterLrs functions in
+  newsfilter.go
+
+- dump-hn.go is a tool to dump all comments and stories on HN into
+  /tmp/hndump.tsv, size of the files is ca. 15GB
+
+- ./scripts/ directory contains a bunch of scripts that help me to decide if a
+  keyword will be useful and not overly strict in filtering stories
 
 
 
