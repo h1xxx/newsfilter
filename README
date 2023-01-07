@@ -47,7 +47,8 @@ dependencies
 build
 =====
 
-$ make
+build the binary
+  $ make
 
 
 
@@ -65,7 +66,16 @@ install binaries to $(DESTDIR)/bin
 run
 ===
 
-newsfilter || ./newsfilter
+depending on where you have your binary file
+  $ newsfilter || ./newsfilter
+
+
+
+update
+======
+
+periodically update the blocklists as they're constantly evolving
+  $ git pull && make install
 
 
 
