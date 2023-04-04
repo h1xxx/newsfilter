@@ -1,4 +1,3 @@
-
 newsfilter
 ==========
 
@@ -36,46 +35,26 @@ heavily.
 
 
 
-dependencies
-============
-
-- make
-- go
-
-
-
-build
+usage
 =====
 
-build the binary
-  $ make
+# build the binary
+make
 
+# install blocklists to ~/.local/share/newsfilter/
+make install
 
+# (optional) install binaries to $(DESTDIR)/bin
+make DESTDIR= bin-install
 
-install
-=======
+# run
+newsfilter || ./newsfilter
 
-install blocklists to ~/.local/share/newsfilter/
-  $ make install
+# browse
+w3m ~/.local/share/newsfilter/news_$(date +%Y-%m-%d)_*.html
 
-install binaries to $(DESTDIR)/bin
-  # make DESTDIR= bin-install
-
-
-
-run
-===
-
-depending on where you have your binary file
-  $ newsfilter || ./newsfilter
-
-
-
-update
-======
-
-periodically update the blocklists as they're constantly evolving
-  $ git pull && make install
+# periodically update the blocklists as they're constantly evolving
+git pull && make install
 
 
 
