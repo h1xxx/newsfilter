@@ -540,6 +540,9 @@ func classifyStory(story hnStory, blockedDomains, blockedKeywords []string,
 	case story.Hours > 72 && story.Score >= 100:
 		hn.mainStories = append(hn.mainStories, story)
 
+	case story.Comments >= 40:
+		hn.mainStories = append(hn.mainStories, story)
+
 	case story.Hours > 72 && story.Score < 100:
 		hn.permaLowStories = append(hn.permaLowStories, story)
 
