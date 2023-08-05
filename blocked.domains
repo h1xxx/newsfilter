@@ -33,6 +33,7 @@ airfactsjournal.com
 alaskabeacon.com
 alcademics.com
 alexanderell.is
+alexmolas.com
 alexmurrell.co.uk
 alignmentforum.org
 aljazeera.com
@@ -77,6 +78,7 @@ artnews.com
 artreview.com
 arunkprasad.com
 arxiv.org
+asiafinancial.com
 *.asmartbear.com
 asmartbear.com
 *.asm.org
@@ -89,6 +91,7 @@ atlasobscura.com
 au.dk
 audubon.org
 ausairpower.net
+austinkleon.com
 autoblog.com
 avc.com
 avherald.com
@@ -105,6 +108,7 @@ bbc.com
 bbc.co.uk
 bea.gov
 beckershospitalreview.com
+belfastlive.co.uk
 bellmar.medium.com
 *.benjamin-cabe.com
 benjamin-cabe.com
@@ -270,6 +274,7 @@ digiday.com
 *.digital.gov
 digital.gov
 dimitarsimeonov.com
+discoursemagazine.com
 discovermagazine.com
 di.se
 dkb.io
@@ -310,6 +315,7 @@ engadget.com
 en.wikipedia.org
 epa.gov
 epsilontheory.com
+ergodicityeconomics.com
 erichgrunewald.com
 esa.int
 espn.com
@@ -343,6 +349,7 @@ federalreserve.gov
 federalreservehistory.org
 fedguy.com
 ferrucc.io
+fev.al
 ffii.org
 fibery.io
 fieldandstream.com
@@ -404,6 +411,7 @@ gov.scot
 *.gov.uk
 gq-magazine.co.uk
 grafana.com
+grammarly.com
 granolashotgun.com
 granta.com
 granturismoevents.com
@@ -413,6 +421,7 @@ greenspun.com
 gsa.gov
 guernicamag.com
 guinnessworldrecords.com
+gutenberg.org
 gwern.net
 haaretz.com
 habitatchronicles.com
@@ -439,6 +448,7 @@ historynet.com
 historytoday.com
 hollywoodreporter.com
 home.cern
+honest-broker.com
 hothardware.com
 *.house.gov
 house.gov
@@ -542,10 +552,12 @@ laphamsquarterly.org
 lareviewofbooks.org
 latimes.com
 lawliberty.org
+leadership.garden
 learnxinyminutes.com
 leetcode.com
 lemonde.fr
 lennysnewsletter.com
+leteyski.com
 lethain.com
 levelshealth.com
 liebertpub.com
@@ -560,6 +572,7 @@ loc.gov
 locusmag.com
 logicmatters.net
 londonist.com
+longnow.org
 longreads.com
 lookgreatnaked.com
 *.lowtechmagazine.com
@@ -598,19 +611,23 @@ media.uzh.ch
 medicalxpress.com
 medievalists.net
 medrxiv.org
+meltingasphalt.com
 mentalfloss.com
 mentalhealth.org.uk
 merriam-webster.com
+meta.com
 metacpc.org
 metafilter.com
 metro.co.uk
 meyerweb.com
+microbiologyresearch.org
 *microsoft.com
 middleeasteye.net
 *.might.net
 might.net
 mikemcquaid.com
 mindingthecampus.org
+minesafetydisclosures.com
 mining.com
 missiveapp.com
 *.mitpress.mit.edu
@@ -691,11 +708,14 @@ ninds.nih.gov
 nltimes.nl
 *.noaa.gov
 noaa.gov
+noahpinion.blog
 nodum.org
 noemamag.com
 nofilmschool.com
 *.northeastern.edu
 northeastern.edu
+*.northwell.edu
+northwell.edu
 *.northwestern.edu
 northwestern.edu
 nova.app
@@ -722,6 +742,7 @@ nzz.ch
 observablehq.com
 oceana.org
 ofdollarsanddata.com
+oimo.io
 onefoottsunami.com
 onemileatatime.com
 onlineornot.com
@@ -772,6 +793,8 @@ phys.org
 pikuma.com
 pioneerworks.org
 piszek.com
+*.pitt.edu
+pitt.edu
 plagiarismtoday.com
 planetscale.com
 plausible.io
@@ -811,6 +834,7 @@ publica.org.au
 publicdomainreview.org
 pudding.cool
 pulitzer.org
+putthison.com
 pv-magazine.com
 pv-tech.org
 qmul.ac.uk
@@ -874,11 +898,13 @@ sahilbloom.com
 salk.edu
 *.samaltman.com
 samaltman.com
+sambowman.co
 *.samlearner.com
 samlearner.com
 sandboxx.us
 sandia.gov
 sapiens.org
+sbnation.com
 scanofthemonth.com
 scholars-stage.org
 sciencealert.com
@@ -927,6 +953,7 @@ slashfilm.com
 slate.com
 slatestarcodex.com
 slideshare.net
+slimemoldtimemold.com
 sloanreview.mit.edu
 slowboring.com
 smartcompany.com.au
@@ -939,6 +966,7 @@ solana.com
 solimanwrites.com
 solvespace.com
 southampton.ac.uk
+southseattleemerald.com
 space.com
 spectator.co.uk
 spectrum.ieee.org
@@ -984,6 +1012,7 @@ talesoftimesforgotten.com
 tampabay.com
 tampafp.com
 taskandpurpose.com
+taylor.town
 tcd.ie
 tchrd.org
 techcrunch.com
@@ -1039,9 +1068,11 @@ thenewatlantis.com
 thenextweb.com
 theovershoot.co
 theparisreview.org
+thepointmag.com
 theprint.in
 thequint.com
 therecord.media
+theringer.com
 thesample.ai
 thespacereview.com
 thestar.com
@@ -1098,6 +1129,8 @@ uga.edu
 uibk.ac.at
 ukragroconsult.com
 uliwestphal.de
+*.umich.edu
+umich.edu
 umr.io
 unherd.com
 unibas.ch
@@ -1188,6 +1221,7 @@ ymcinema.com
 youtu.be
 youtube.com
 zachholman.com
+zapatopi.net
 zdnet.com
 zeit.de
 zerohedge.com
