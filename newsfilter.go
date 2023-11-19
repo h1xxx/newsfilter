@@ -756,6 +756,7 @@ func getRawArticles(htmlBody string) (string, []string) {
 
 	lines := strings.Split(htmlBody, "\n")
 	for _, line := range lines {
+		line = strings.TrimSpace(line)
 		if strings.Contains(line, "<h1 class=\"entry-title\">") ||
 			strings.Contains(line, "<h1>") {
 
