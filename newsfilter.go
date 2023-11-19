@@ -743,6 +743,7 @@ func getCatchUpArticles(url string, client *http.Client) (string, []article) {
 		a.url = strings.Split(split[0], "\" ")[0]
 		a.title = strings.Split(split[1], "</a")[0]
 		a.domain = urlToDomain(a.url)
+
 		articles = append(articles, a)
 	}
 
@@ -762,7 +763,10 @@ func getRawArticles(htmlBody string) (string, []string) {
 			title = strings.Split(title, "<")[0]
 		}
 
-		if strings.HasPrefix(line, "<ol><li>") {
+		if strings.HasPrefix(line, "<li>") &&
+			strings.HasSuffix(line, "</a></li>") &&
+			!strings.Contains(line, "https://badcyber.com") {
+
 			split := strings.Split(line, "href=\"")
 			for _, item := range split {
 				rawArticles = append(rawArticles, item)
@@ -771,7 +775,7 @@ func getRawArticles(htmlBody string) (string, []string) {
 	}
 
 	if len(rawArticles) == 0 {
-		errExit(errors.New(""), "cound't get badcyber.com articles")
+		fmt.Println("couldn't get badcyber.com articles")
 	}
 
 	return title, rawArticles
