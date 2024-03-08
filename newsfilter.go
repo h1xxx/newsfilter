@@ -96,13 +96,13 @@ func main() {
 	fmt.Println("filtering lobste.rs stories...")
 	lrsStories = filterLrs(lrsStories, &lrsProcessedIDs)
 
-	fmt.Println("getting badcyber.com articles...")
+	//fmt.Println("getting badcyber.com articles...")
 	bc := getBadCyberLinks(client, progDir)
 
 	fmt.Println("logging all stories...")
 	logHnStories(&hn, progDir)
 	logLrsStories(lrsStories, progDir)
-	logBcArticles(bc, progDir)
+	//logBcArticles(bc, progDir)
 
 	fmt.Println("reading history of HN URLs...")
 	readHnUrls(&hn, progDir)
@@ -130,6 +130,7 @@ func main() {
 		len(lrsProcessedIDs),
 		len(lrsStories))
 
+	/*
 	fmt.Println("\nbadcyber.com stats")
 	var bcCount int
 	for _, articles := range bc {
@@ -139,6 +140,7 @@ func main() {
 		"articles: %d\n\n",
 		len(bc),
 		bcCount)
+	*/
 
 	dt := fmt.Sprintf("%d-%.2d-%.2d_%.2d%.2d",
 		now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute())
@@ -273,6 +275,7 @@ func urlExists(hn *hnResults, url string) (bool, int) {
 		return string(hn.urls[i].url) >= url
 	})
 
+	// todo: this line panics
 	hnUrl := strings.TrimSuffix(hn.urls[idx].url, "/")
 	url = strings.TrimSuffix(url, "/")
 
@@ -676,6 +679,7 @@ func logLrsLine(story lrsStory) string {
 
 func getBadCyberLinks(client *http.Client, progDir string) map[string][]article {
 	bc := make(map[string][]article)
+	return bc
 
 	catchUpLinks := getCatchUpLinks(client, progDir)
 	for _, link := range catchUpLinks {
