@@ -92,6 +92,7 @@ asm.org
 asteriskmag.com
 astro.build
 astronomy.stackexchange.com
+*.atavist.com
 atavist.com
 atlasobscura.com
 *.au.dk
@@ -219,6 +220,7 @@ chess.com
 chicagomag.com
 chicagoreader.com
 chicagotribune.com
+chinabooksreview.com
 christianheilmann.com
 chronicle.com
 city-journal.org
@@ -255,6 +257,7 @@ cornell.edu
 coryzue.com
 cpj.org
 craigmod.com
+credit-suisse.com
 crisesnotes.com
 cryptoadventure.com
 crystalverse.com
@@ -262,6 +265,7 @@ css-irl.info
 css-tricks.com
 *.ctvnews.ca
 ctvnews.ca
+culture.pl
 currentaffairs.org
 cyclingtips.com
 dailycamera.com
@@ -287,6 +291,7 @@ declassifieduk.org
 deepsouthventures.com
 defensenews.com
 deno.com
+denver7.com
 deprocrastination.co
 designyoutrust.com
 destevez.net
@@ -305,6 +310,7 @@ discovermagazine.com
 di.se
 dkb.io
 dkb.show
+doi.org
 *.dot.gov
 dot.gov
 driving.ca
@@ -315,6 +321,7 @@ dsebastien.net
 duke.edu
 durmonski.com
 dw.com
+dwell.com
 dynomight.net
 easylang.online
 eater.com
@@ -335,6 +342,7 @@ efinancialcareers.com
 eia.gov
 elazzabi.com
 eleanorkonik.com
+electrek.co
 elidourado.com
 *.elpais.com
 elpais.com
@@ -342,7 +350,9 @@ emergencemagazine.org
 engadget.com
 english.stackexchange.com
 en.wikipedia.org
+eos.org
 epa.gov
+epicurious.com
 epsilontheory.com
 ergodicityeconomics.com
 erichgrunewald.com
@@ -395,6 +405,7 @@ firstthings.com
 fivebooks.com
 fivethirtyeight.com
 flatpanelshd.com
+flightglobal.com
 flightradar24.com
 flowingdata.com
 flyingmag.com
@@ -444,6 +455,7 @@ goodnewsnetwork.org
 *.google.com
 google.com
 gordongoner.com
+gothamist.com
 gouv.fr
 governing.com
 govexec.com
@@ -523,8 +535,10 @@ inference.vc
 infoq.com
 innovationaus.com
 inputmag.com
+insideclimatenews.org
 insidehighered.com
 insider.com
+insidestory.org.au
 insidethemagic.net
 instructables.com
 inteoryx.com
@@ -655,6 +669,7 @@ marketingweek.com
 marketwatch.com
 markgreville.ie
 mashable.com
+matheducators.stackexchange.com
 math.stackexchange.com
 math.utah.edu
 mattbruenig.com
@@ -678,12 +693,14 @@ metacpc.org
 metafilter.com
 metro.co.uk
 meyerweb.com
+miamiherald.com
 microbiologyresearch.org
 *microsoft.com
 middleeasteye.net
 *.might.net
 might.net
 mikemcquaid.com
+millersbookreview.com
 mindingthecampus.org
 mindmatters.ai
 minesafetydisclosures.com
@@ -736,6 +753,7 @@ nbcphiladelphia.com
 nbcsandiego.com
 *.nbcsports.com
 nbcsports.com
+nber.org
 *.ncsu.edu
 ncsu.edu
 neal.fun
@@ -804,6 +822,8 @@ nybooks.com
 nydailynews.com
 nymag.com
 nypost.com
+*.nyt.com
+nyt.com
 nytimes.com
 *.nyu.edu
 nyu.edu
@@ -839,6 +859,7 @@ pahomepage.com
 *.palladiummag.com
 palladiummag.com
 palletsprojects.com
+papersplease.org
 pasadenastarnews.com
 pastemagazine.com
 patzhong.com
@@ -945,6 +966,7 @@ return.life
 reuters.com
 review.chicagobooth.edu
 reviewjournal.com
+rfi.fr
 richmondfed.org
 *.rieck.me
 rieck.me
@@ -988,6 +1010,7 @@ sciencealert.com
 *.scienceandindustrymuseum.org.uk
 scienceandindustrymuseum.org.uk
 sciencedirect.com
+*.sciencemag.org
 sciencemag.org
 sciencenews.org
 science.org
@@ -1071,10 +1094,12 @@ statista.com
 statmodeling.stat.columbia.edu
 statnews.com
 statsignificant.com
+statsmapsnpix.com
 stephendiehl.com
 steveblank.com
 stingingfly.org
 *.stlouisfed.org
+straightdope.com
 straitstimes.com
 strangehorizons.com
 strangeloopcanon.com
@@ -1129,6 +1154,7 @@ theautopian.com
 theaviationgeekclub.com
 theaviationist.com
 thebaffler.com
+thebignewsletter.com
 thebookseller.com
 thebulletin.org
 theconversation.com
@@ -1174,6 +1200,7 @@ theringer.com
 thesample.ai
 thespacereview.com
 thestar.com
+thesun.co.uk
 theswaddle.com
 thetimes.co.uk
 thetruthaboutcars.com
@@ -1243,6 +1270,7 @@ unrealengine.com
 unsw.edu.au
 unusualwhales.com
 up.com
+urbanismspeakeasy.com
 usatoday.com
 *.usc.edu
 usc.edu
@@ -1254,6 +1282,8 @@ usitc.gov
 *.usma.edu
 usma.edu
 usnews.com
+*.usni.org
+usni.org
 *.usps.com
 usps.com
 *.utah.edu
