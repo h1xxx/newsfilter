@@ -381,6 +381,8 @@ cities
 Cities
  city
  City
+civilization
+Civilization
 click	!zero	!Zero
 Click	!zero	!Zero
 climate
@@ -640,6 +642,8 @@ Evidence
  EVs 
 exercise
 Exercise
+exocomet
+Exocomet
 F#
 F-1
 F-2
@@ -697,6 +701,7 @@ Fitness
 Flask
 flight
 Flight
+Florida
  flu 
 Flutter
 font
@@ -746,6 +751,7 @@ Garden
  Gas 
 gasoline
 Gasoline
+GDP
 GDPR
 geek
 Geek
@@ -761,6 +767,7 @@ gen z
 gen Z
 Gen z
 Gen Z
+Georgia
 geotherm
 Geotherm
 gift
@@ -788,6 +795,8 @@ grant
 Grant
 graphics
 Graphics
+gravity
+Gravity
 Greenland
 Gtk
 GTK
@@ -869,6 +878,8 @@ IKEA
 Illinois
 illustrat
 Illustrat
+immigration
+Immigration
 immune
 Immune
 immunity
@@ -1130,6 +1141,7 @@ mushrooms
 Mushrooms
 music
 Music
+Musk 
 muslim
 Muslim
 myopia
@@ -1634,6 +1646,7 @@ Suicide
  suing 
  Suing 
  sun 
+supernova
 supplement
 Supplement
 supreme court
@@ -1908,11 +1921,3 @@ YouTuber
 Zealand
 Zoom
 Zuckerberg
-Civilization
-civilization
-exocomet
-Exocomet
-Musk 
-GDP
-gravity
-Gravity

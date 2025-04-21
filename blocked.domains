@@ -316,6 +316,7 @@ dkb.show
 doi.org
 *.dot.gov
 dot.gov
+drb.ie
 driving.ca
 *.drmaciver.com
 drmaciver.com
@@ -381,6 +382,7 @@ ewg.org
 exaltitude.io
 expmag.com
 extremetech.com
+exurbe.com
 *.faa.gov
 faa.gov
 *.facebook.com
@@ -500,6 +502,7 @@ hhs.gov
 hillelwayne.com
 hindenburgresearch.com
 history.com
+historyextra.com
 historygarage.com
 historyhit.com
 history-maps.com
@@ -955,6 +958,7 @@ rarehistoricalphotos.com
 rbi.org.in
 react.dev
 reactjs.org
+reactormag.com
 readmargins.com
 readwriteweb.com
 reasonabledeviations.com
@@ -1061,6 +1065,7 @@ simonhearne.com
 sindresorhus.com
 sive.rs
 sixthtone.com
+skyandtelescope.org
 *.sky.com
 sky.com
 sky-lights.org
@@ -1272,6 +1277,7 @@ umr.io
 unherd.com
 unibas.ch
 uni-bonn.de
+universetoday.com
 universityofcalifornia.edu
 unrealengine.com
 *.unsw.edu.au
@@ -1378,6 +1384,3 @@ znak.com
 zoom.us
 zotero.org
 zyppy.com
-universetoday.com
-skyandtelescope.org
-reactormag.com
