@@ -1,8 +1,8 @@
 newsfilter
 ==========
 
-A small program to fetch articles from Hacker News, lobste.rs and badcyber.com
-and extract only tech articles with use of blacklisted domains and keywords.
+A small program to fetch articles from Hacker News and lobste.rs, and extract
+only tech articles with use of blacklisted domains and keywords.
 
 Prepares an html file with a list of articles that can be read from any www
 browser.
