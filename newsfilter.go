@@ -240,7 +240,10 @@ func urlExists(hn *hnResults, url string) (bool, int) {
 		return string(hn.urls[i].url) >= url
 	})
 
-	// todo: this line panics
+	if idx >= len(hn.urls) {
+		return false, 0
+	}
+
 	hnUrl := strings.TrimSuffix(hn.urls[idx].url, "/")
 	url = strings.TrimSuffix(url, "/")
 
