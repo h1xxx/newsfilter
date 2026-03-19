@@ -471,6 +471,7 @@ func filterHn(hn *hnResults, client *http.Client, now time.Time,
 	blockedKeywords := readBlockedKeywords(progDir)
 
 	for _, id := range hn.storyIDs {
+		time.Sleep(10*time.Millisecond)
 
 		if intExists(hn.processedIDs, id) {
 			continue
